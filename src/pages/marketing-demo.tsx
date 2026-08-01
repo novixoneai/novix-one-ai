@@ -1,283 +1,207 @@
+import { FormEvent, useEffect, useState } from "react";
 import {
-  IconRocket,
-  IconCode,
-  IconDatabase,
-  IconCloud,
-  IconCheck,
-  IconBrandGithub,
-} from "@tabler/icons-react";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+  ArrowDownRight,
+  ArrowUpRight,
+  Bot,
+  Check,
+  ChevronDown,
+  Clock3,
+  Globe2,
+  Menu,
+  MessageCircle,
+  PhoneCall,
+  Plus,
+  Sparkles,
+  Workflow,
+  X,
+} from "lucide-react";
 
-/**
- * Marketing/Landing page demo - professional landing page template.
- *
- * This demo shows how to build a polished marketing site with:
- * - Hero section with CTA
- * - Features grid
- * - Pricing/plans section
- * - Testimonials
- * - Footer with links
- *
- * Fully responsive and theme-aware. Customize colors, copy, and layout
- * to match your product or service.
- */
-
-const features = [
+const services = [
   {
-    icon: IconCode,
-    title: "Developer-Friendly",
+    number: "01",
+    eyebrow: "Always on",
+    title: "AI Voice Agents",
     description:
-      "Built with modern web technologies. Full TypeScript support and hot reload.",
+      "A sharp, natural voice on the front line of your business—answering, qualifying, booking, and following up while your team gets on with the work.",
+    bullets: ["24/7 inbound calls", "Outbound follow-up", "Lead qualification"],
+    icon: PhoneCall,
+    accent: "coral",
   },
   {
-    icon: IconDatabase,
-    title: "Data Persistence",
+    number: "02",
+    eyebrow: "Work, redesigned",
+    title: "Automated AI Solutions",
     description:
-      "SQLite databases included. Store and query data without external services.",
+      "Connect the tools you already use and automate the busywork that keeps your best people stuck in the weeds.",
+    bullets: ["Repetitive tasks on autopilot", "On-brand voice chatbots", "Your tools, connected"],
+    icon: Workflow,
+    accent: "aqua",
   },
   {
-    icon: IconCloud,
-    title: "Self-Hosted",
+    number: "03",
+    eyebrow: "Made to fit",
+    title: "Custom Business Apps",
     description:
-      "Run on your own infrastructure. Full control over your data and deployment.",
+      "Booking systems, client portals, dashboards, and internal tools built around your actual workflow—not someone else’s template.",
+    bullets: ["Built around your workflow", "No subscription bloat", "Ready to evolve"],
+    icon: Bot,
+    accent: "violet",
   },
   {
-    icon: IconRocket,
-    title: "Fast Deployment",
+    number: "04",
+    eyebrow: "Make an entrance",
+    title: "Beautiful Websites",
     description:
-      "Go from idea to production in minutes. No complex setup or configuration.",
+      "Fast, focused digital experiences that make your business look like the leader it already is—and turn attention into action.",
+    bullets: ["Custom design, zero templates", "Fast on every screen", "Conversion-minded"],
+    icon: Globe2,
+    accent: "sun",
   },
 ];
 
-const plans = [
-  {
-    name: "Starter",
-    price: "$0",
-    period: "forever",
-    features: [
-      "Up to 3 sites",
-      "1GB storage",
-      "Community support",
-      "Basic templates",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "$19",
-    period: "per month",
-    features: [
-      "Unlimited sites",
-      "50GB storage",
-      "Priority support",
-      "Advanced templates",
-      "Custom domains",
-      "SSL certificates",
-    ],
-    popular: true,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "contact us",
-    features: [
-      "Everything in Pro",
-      "Dedicated support",
-      "SLA guarantees",
-      "Team collaboration",
-      "Advanced security",
-    ],
-  },
+const steps = [
+  ["01", "Listen first", "We get clear on the friction, the opportunity, and the result you actually want."],
+  ["02", "Build the right thing", "A focused system, designed around your people, your customers, and your day-to-day."],
+  ["03", "Put it to work", "Launch quickly, learn from real use, and keep improving what moves the needle."],
 ];
+
+function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  return <div className={`reveal ${className}`} style={{ "--delay": `${delay}ms` } as React.CSSProperties}>{children}</div>;
+}
+
+function Logo() {
+  return (
+    <a className="brand" href="#top" aria-label="Novix One home">
+      <img src="/images/novix-one-logo-full.png" alt="Novix One" />
+    </a>
+  );
+}
 
 export default function MarketingDemo() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeService, setActiveService] = useState(0);
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")),
+      { threshold: 0.12 },
+    );
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSent(true);
+  }
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="outline" className="mb-6">
-              <IconRocket className="mr-1 size-3" />
-              Now in Beta
-            </Badge>
-            <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-              Build web apps on{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                your computer
-              </span>
-            </h1>
-            <p className="mb-8 text-xl text-muted-foreground md:text-2xl">
-              Create, host, and publish websites and services without managing
-              servers. Everything runs on your Zo Computer.
-            </p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="w-full sm:w-auto">
-                Get Started Free
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                <IconBrandGithub className="mr-2 size-5" />
-                View on GitHub
-              </Button>
-            </div>
+    <main id="top" className="novix-site">
+      <div className="noise" aria-hidden="true" />
+      <div className="cursor-glow" aria-hidden="true" />
+
+      <header className="site-header">
+        <Logo />
+        <nav className={menuOpen ? "main-nav is-open" : "main-nav"} aria-label="Main navigation">
+          <a href="#services" onClick={closeMenu}>Services <span>02</span></a>
+          <a href="#why" onClick={closeMenu}>Why Novix <span>03</span></a>
+          <a href="#contact" onClick={closeMenu}>Start a project <ArrowUpRight size={15} /></a>
+        </nav>
+        <div className="header-actions">
+          <a className="header-email" href="mailto:jorges@novixone.co">jorges@novixone.co</a>
+          <button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>
+            {menuOpen ? <X size={21} /> : <Menu size={21} />}
+          </button>
+        </div>
+      </header>
+
+      <section className="hero shell">
+        <div className="hero-copy">
+          <Reveal><p className="kicker"><span className="pulse-dot" /> Miami-based AI agency <span className="slash">/</span> Built for momentum</p></Reveal>
+          <Reveal delay={80}><h1>Make your business <em>impossible</em> to ignore.</h1></Reveal>
+          <Reveal delay={160}><p className="hero-intro">Voice agents that answer calls. Apps built for your workflow. Websites that make you look like the leader you already are.</p></Reveal>
+          <Reveal delay={240} className="hero-cta-row">
+            <a href="#contact" className="button button-primary">Book a free call <ArrowUpRight size={17} /></a>
+            <a href="#services" className="scroll-link"><span className="scroll-icon"><ArrowDownRight size={15} /></span> Explore the work</a>
+          </Reveal>
+          <Reveal delay={320} className="hero-proof">
+            <div><strong>2–4</strong><span>weeks to launch</span></div>
+            <div><strong>24/7</strong><span>always on</span></div>
+            <div><strong>100%</strong><span>built for you</span></div>
+          </Reveal>
+        </div>
+
+        <Reveal className="hero-media" delay={180}>
+          <div className="media-orbit orbit-one" />
+          <div className="media-orbit orbit-two" />
+          <div className="video-frame">
+            <video autoPlay muted loop playsInline poster="/images/novix-one-logo.png" aria-label="Abstract AI generated visuals">
+              <source src="/novix-hero.mp4" type="video/mp4" />
+            </video>
+            <div className="video-wash" />
+            <div className="video-label"><span className="live-dot" /> Intelligence, in motion</div>
+            <div className="video-index">N<span>01</span></div>
           </div>
+          <div className="hero-sticker"><Sparkles size={16} /><span>AI<br />elevated</span></div>
+        </Reveal>
+        <a href="#services" className="hero-side-note"><span>Scroll to explore</span><ArrowDownRight size={16} /></a>
+      </section>
+
+      <section className="marquee" aria-label="Novix One services">
+        <div className="marquee-track"><span>AI VOICE AGENTS</span><i>✳</i><span>AUTOMATED SOLUTIONS</span><i>✳</i><span>CUSTOM APPS</span><i>✳</i><span>BEAUTIFUL WEBSITES</span><i>✳</i><span>AI VOICE AGENTS</span><i>✳</i><span>AUTOMATED SOLUTIONS</span><i>✳</i></div>
+      </section>
+
+      <section id="services" className="services shell section-pad">
+        <Reveal><div className="section-heading"><div><p className="section-number">01 <span>/</span> What we do</p><h2>Small team.<br /><em>Big leverage.</em></h2></div><p className="section-lede">No off-the-shelf templates. Every solution is built around the way your business actually works.</p></div></Reveal>
+        <div className="service-layout">
+          <div className="service-list">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              const isActive = index === activeService;
+              return <button key={service.number} className={`service-tab ${isActive ? "is-active" : ""}`} onClick={() => setActiveService(index)} aria-pressed={isActive}>
+                <span className="service-tab-num">{service.number}</span><span className="service-tab-title">{service.title}</span><ArrowUpRight className="service-tab-arrow" size={18} /><Icon className="service-tab-icon" size={21} />
+              </button>;
+            })}
+          </div>
+          <Reveal className={`service-feature accent-${services[activeService].accent}`}>
+            {(() => { const service = services[activeService]; const Icon = service.icon; return <>
+              <div className="feature-top"><span>{service.eyebrow}</span><Icon size={26} /><span className="feature-count">{service.number} / 04</span></div>
+              <h3>{service.title}</h3><p>{service.description}</p>
+              <ul>{service.bullets.map((bullet) => <li key={bullet}><Check size={15} />{bullet}</li>)}</ul>
+              <a href="#contact" className="text-link">Explore this service <ArrowUpRight size={16} /></a>
+              <div className="feature-watermark">{service.number}</div>
+            </>; })()}
+          </Reveal>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Everything you need to build
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Powerful features that make development simple and fast
-          </p>
+      <section id="why" className="why-section">
+        <div className="shell section-pad why-grid">
+          <Reveal><div className="why-art"><div className="art-ring ring-a" /><div className="art-ring ring-b" /><div className="art-core">N<span>O</span>VIX</div><span className="art-caption">The future<br />is practical.</span></div></Reveal>
+          <Reveal delay={120}><div className="why-copy"><p className="section-number">02 <span>/</span> Why Novix One</p><h2>Big-business AI.<br /><em>Small-business speed.</em></h2><p>We bring the tools, thinking, and polish of a serious innovation team—without the layers, the jargon, or the six-month implementation.</p><a href="#contact" className="text-link">Meet us at the starting line <ArrowUpRight size={16} /></a></div></Reveal>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
-            <Card key={feature.title} className="border-muted">
-              <CardHeader>
-                <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <feature.icon className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <div className="stats-row shell"><div><strong>24/7</strong><span>Your AI never sleeps</span></div><div><strong>2–4 wks</strong><span>From first call to live</span></div><div><strong>∞</strong><span>Room to grow into</span></div></div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="bg-muted/50 py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Simple, transparent pricing
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Choose the plan that's right for you
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {plans.map((plan) => (
-              <Card
-                key={plan.name}
-                className={
-                  plan.popular ? "border-primary shadow-lg" : "border-muted"
-                }
-              >
-                {plan.popular && (
-                  <div className="bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground">
-                    Most Popular
-                  </div>
-                )}
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground">
-                      {" "}
-                      / {plan.period}
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    className="mt-6 w-full"
-                    variant={plan.popular ? "default" : "outline"}
-                  >
-                    {plan.name === "Enterprise"
-                      ? "Contact Sales"
-                      : "Get Started"}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+      <section className="process shell section-pad">
+        <Reveal><div className="section-heading"><div><p className="section-number">03 <span>/</span> How it works</p><h2>Clear head.<br /><em>Clean execution.</em></h2></div><p className="section-lede">The best technology feels obvious once it’s in place. We keep the path there simple.</p></div></Reveal>
+        <div className="steps-grid">{steps.map(([number, title, copy], index) => <Reveal key={number} delay={index * 100}><article className="step"><span className="step-number">{number}</span><div className="step-line" /><h3>{title}</h3><p>{copy}</p></article></Reveal>)}</div>
       </section>
 
-      {/* CTA Section */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <Card className="border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
-          <CardContent className="p-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Ready to get started?
-            </h2>
-            <p className="mb-8 text-lg text-muted-foreground">
-              Join thousands of developers building on Zo Computer
-            </p>
-            <Button size="lg">Create Your First Site</Button>
-          </CardContent>
-        </Card>
+      <section id="contact" className="contact shell section-pad">
+        <Reveal><div className="contact-panel"><div className="contact-copy"><p className="section-number">04 <span>/</span> Get started</p><h2>Let’s make<br /><em>something move.</em></h2><p>Tell us what’s slowing your business down. We’ll show you where AI can help—plain language, no pressure.</p><div className="contact-details"><a href="mailto:jorges@novixone.co"><MessageCircle size={17} />jorges@novixone.co</a><a href="tel:+18333250830"><PhoneCall size={17} />833-325-0830</a></div></div><form className="contact-form" onSubmit={handleSubmit}>{sent ? <div className="form-success"><div className="success-icon"><Check size={22} /></div><h3>Message received.</h3><p>We’ll get back to you within 24 hours. In the meantime, the future is looking good.</p><button type="button" className="text-link" onClick={() => setSent(false)}>Send another note <ArrowUpRight size={16} /></button></div> : <><div className="form-row"><label>Name<input required name="name" placeholder="Your name" /></label><label>Email<input required type="email" name="email" placeholder="you@company.com" /></label></div><label>What can we help with?<select name="service" defaultValue=""><option value="" disabled>Select a service</option><option>AI Voice Agents</option><option>Automated AI Solutions</option><option>Custom Business Apps</option><option>Beautiful Websites</option></select></label><label>Tell us a little more<textarea name="message" placeholder="The good stuff..." rows={4} /></label><button className="button button-primary form-submit" type="submit">Start the conversation <ArrowUpRight size={17} /></button></>}</form></div></Reveal>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t bg-muted/30">
-        <div className="mx-auto max-w-7xl px-6 py-12">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div>
-              <h3 className="mb-4 font-semibold">Product</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Features</li>
-                <li>Pricing</li>
-                <li>Documentation</li>
-                <li>Changelog</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 font-semibold">Company</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>About</li>
-                <li>Blog</li>
-                <li>Careers</li>
-                <li>Contact</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 font-semibold">Resources</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Community</li>
-                <li>Help Center</li>
-                <li>Status</li>
-                <li>API Reference</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 font-semibold">Legal</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Privacy</li>
-                <li>Terms</li>
-                <li>Security</li>
-                <li>Compliance</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2025 Zo Computer. This is a demo marketing page template.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <footer className="site-footer shell"><Logo /><div className="footer-center"><span>Miami, FL <span className="footer-dot">●</span> Everywhere</span><span>Built with intent, not templates.</span></div><div className="footer-links"><a href="#top">Back to top <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© 2026 Novix One. All rights reserved.</span><span>AI. Automated. Elevated.</span></div></footer>
+
+      <a className="floating-call" href="#contact" aria-label="Book a free call"><Clock3 size={17} /> <span>Book a free call</span></a>
+      {menuOpen && <button className="menu-backdrop" onClick={closeMenu} aria-label="Close navigation" />}
+    </main>
   );
 }
