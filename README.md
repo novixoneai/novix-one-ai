@@ -1,12 +1,12 @@
 # Novix One AI Agency Website
 
-Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, motion-led marketing website for AI voice agents, automated solutions, custom business apps, and conversion-focused websites.
+Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, motion-led marketing website for AI voice agents, workflow automation, custom business apps, and conversion-focused websites.
 
 ## Project Notes
 
-- The homepage uses a dark editorial/art-directed visual system rather than the default marketing template: oversized Bodoni-style display typography, DM Sans body copy, coral/aqua/violet accents, grain, orbit lines, and a looping hero video.
-- The site is intentionally single-page and keeps the key business actions visible: services, proof points, process, contact form, email, phone, and free-call CTA.
-- Service content is interactive: selecting a service tab updates the featured service panel without navigating away.
+- The homepage uses an elegant navy editorial visual system: Libre Baskerville display typography, DM Sans body copy, restrained ice-blue/aqua/champagne accents, a subtle grid, orbit lines, and a looping hero video presented as a clean circular visual rather than a framed window.
+- The site is intentionally single-page and moves visitors through the opportunity, services, approach, process, FAQ, and contact form with a clear strategy-call CTA.
+- Service content is interactive: selecting a service tab updates the featured service panel without navigating away, and FAQ items expand in place.
 - The contact form is client-side functional. On submit it switches to a confirmation state; it does not send data to a server yet.
 - The hero video and current Novix One logo assets are stored in `public/novix-hero.mp4` and `public/images/` so the site works offline on this Zo computer and in production.
 - The design respects reduced-motion preferences and is responsive for mobile navigation, stacked sections, and touch-friendly controls.
