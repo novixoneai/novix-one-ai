@@ -1,0 +1,15 @@
+{
+  "name": "novix-one-ai",
+  "local_port": 57158,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "novix-one-ai",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 56017,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}
