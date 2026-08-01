@@ -117,7 +117,7 @@
 .service-tab-arrow { opacity: 0; transform: translate(-8px, 8px); color: var(--blue); transition: opacity .25s ease, transform .25s ease; }
 .service-tab.is-active .service-tab-arrow, .service-tab:hover .service-tab-arrow { opacity: 1; transform: translate(0, 0); }
 .service-tab-icon { opacity: .42; }
-.service-feature { position: relative; min-height: 340px; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; padding: 30px 31px; background: linear-gradient(145deg, rgba(15,45,75,.88), rgba(8,28,49,.8)); animation: feature-in .35s ease; }
+.service-feature { position: relative; min-height: 340px; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; padding: 30px 31px; background: linear-gradient(145deg, #123b66 0%, #0d2c4e 48%, #081f3a 100%); animation: feature-in .35s ease; }
 .service-feature::before { position: absolute; content: ""; width: 260px; height: 260px; right: -60px; bottom: -115px; border-radius: 50%; background: var(--accent); opacity: .16; filter: blur(36px); }
 .accent-blue { --accent: var(--blue); }.accent-aqua { --accent: var(--aqua); }.accent-silver { --accent: var(--silver); }.accent-champagne { --accent: var(--champagne); }
 .feature-top { position: relative; display: flex; align-items: center; gap: 10px; color: var(--accent); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
