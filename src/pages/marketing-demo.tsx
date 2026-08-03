@@ -135,51 +135,59 @@ export default function MarketingDemo() {
 
       <div className="signal-strip"><div className="signal-track"><span>Voice agents</span><i>✳</i><span>Smart automations</span><i>✳</i><span>Custom apps</span><i>✳</i><span>Websites that get found</span><i>✳</i><span>Voice agents</span><i>✳</i><span>Smart automations</span><i>✳</i></div></div>
 
-      <section className="problem shell section-pad" id="problems">
-        <Reveal><div className="section-heading"><div><p className="section-number">01 / THE PROBLEMS WE FIX</p><h2>Sound <em>familiar?</em></h2></div><p className="section-lede">You did not open your business to become a full-time administrator. Let us fix that.</p></div></Reveal>
-        <div className="problem-list">
-          {[
-            ["The phone rings while you are with a client.", "So it goes to voicemail. Half those callers never call back — they just call the next name on the list. Every missed call is a customer you will never know you lost."],
-            ["Your front desk is drowning.", "Scheduling, reminders, intake forms, follow-ups, rescheduling the no-shows. Your team spends more time on admin than on the people who actually walked in."],
-            ["Leads go cold before you can reply.", "Someone fills out your form at 7pm. You see it the next morning. By then they have already booked with someone who answered faster."],
-            ["The same tasks eat your week, every week.", "Invoicing, data entry, copy-pasting between tools, chasing paperwork. Hours that should go to your clients or your family disappear into the routine."],
-            ["Your website looks fine — but nobody finds it.", "A pretty site is useless if it does not show up when someone searches for what you do. You are invisible to the customers who are looking for you right now."],
-          ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div><ArrowUpRight className="problem-arrow" size={19} /></article></Reveal>)}
-        </div>
-      </section>
-
-      <section className="quote-section shell section-pad">
-        <Reveal><div className="quote-block"><div className="quote-mark">“</div><blockquote>AI is rolling in like a tidal wave. The businesses that learn to ride it now will pull years ahead of the ones still watching from the shore.</blockquote><p>The offices and small businesses adopting AI today are not doing anything superhuman — they are just letting the right tools handle the parts that were slowing them down. You can do the same, starting with one simple win.</p></div></Reveal>
-      </section>
-
-      <section className="services shell section-pad" id="services">
-        <Reveal><div className="section-heading"><div><p className="section-number">02 / WHAT WE DO</p><h2>Four ways we take work <em>off your plate.</em></h2></div><p className="section-lede">Practical systems for the parts of the business that should not depend on one person remembering to do them.</p></div></Reveal>
-        <div className="service-layout">
-          <div className="service-list">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              const isActive = index === activeService;
-              return <button key={service.title} className={`service-tab ${isActive ? "is-active" : ""}`} onClick={() => setActiveService(index)} aria-pressed={isActive}>
-                <span className="service-tab-num">{index + 1}</span><span className="service-tab-title">{service.title}</span><ArrowUpRight className="service-tab-arrow" size={18} /><Icon className="service-tab-icon" size={20} />
-              </button>;
-            })}
+      <section className="problem section-pad" id="problems">
+        <div className="shell">
+          <Reveal><div className="section-heading"><div><p className="section-number">01 / THE PROBLEMS WE FIX</p><h2>Sound <em>familiar?</em></h2></div><p className="section-lede">You did not open your business to become a full-time administrator. Let us fix that.</p></div></Reveal>
+          <div className="problem-list">
+            {[
+              ["The phone rings while you are with a client.", "So it goes to voicemail. Half those callers never call back — they just call the next name on the list. Every missed call is a customer you will never know you lost."],
+              ["Your front desk is drowning.", "Scheduling, reminders, intake forms, follow-ups, rescheduling the no-shows. Your team spends more time on admin than on the people who actually walked in."],
+              ["Leads go cold before you can reply.", "Someone fills out your form at 7pm. You see it the next morning. By then they have already booked with someone who answered faster."],
+              ["The same tasks eat your week, every week.", "Invoicing, data entry, copy-pasting between tools, chasing paperwork. Hours that should go to your clients or your family disappear into the routine."],
+              ["Your website looks fine — but nobody finds it.", "A pretty site is useless if it does not show up when someone searches for what you do. You are invisible to the customers who are looking for you right now."],
+            ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div><ArrowUpRight className="problem-arrow" size={19} /></article></Reveal>)}
           </div>
-          <Reveal className={`service-feature accent-${services[activeService].accent}`}>
-            {(() => { const service = services[activeService]; const Icon = service.icon; return <>
-              <div className="feature-top"><span>{service.tag}</span><Icon size={24} /><span className="feature-count">{service.number} / 04</span></div>
-              <h3>{service.title}</h3><p>{service.description}</p>
-              <ul>{service.bullets.map((bullet) => <li key={bullet}><Check size={14} />{bullet}</li>)}</ul>
-              <a href="#contact" className="text-link">Talk about this service <ArrowUpRight size={16} /></a>
-              <div className="feature-watermark">{service.number}</div>
-            </>; })()}
-          </Reveal>
         </div>
       </section>
 
-      <section className="process shell section-pad" id="process">
-        <Reveal><div className="section-heading"><div><p className="section-number">03 / HOW IT WORKS</p><h2>Getting started could not be <em>easier.</em></h2></div><p className="section-lede">A simple first win, built around your business and explained in plain English.</p></div></Reveal>
-        <div className="process-grid">
-          {[['01', 'A friendly chat', 'Tell us where your time and leads are leaking. We will listen and point out the easiest, highest-impact place to start — no pressure, no cost.'], ['02', 'We build it for you', 'We design everything around your business, set it all up, and walk you through it in plain English. You do not touch the tech.'], ['03', 'You get your time back', 'Your phone gets answered, your admin runs itself, and new customers find you online — while you focus on the work and people that matter. We stay on to keep it all running smoothly.']].map(([number, title, body], index) => <Reveal key={number} delay={index * 80}><article className="process-card"><span>{number}</span><h3>{title}</h3><p>{body}</p><ArrowUpRight size={18} /></article></Reveal>)}
+      <section className="quote-section section-pad">
+        <div className="shell">
+          <Reveal><div className="quote-block"><div className="quote-mark">“</div><blockquote>AI is rolling in like a tidal wave. The businesses that learn to ride it now will pull years ahead of the ones still watching from the shore.</blockquote><p>The offices and small businesses adopting AI today are not doing anything superhuman — they are just letting the right tools handle the parts that were slowing them down. You can do the same, starting with one simple win.</p></div></Reveal>
+        </div>
+      </section>
+
+      <section className="services section-pad" id="services">
+        <div className="shell">
+          <Reveal><div className="section-heading"><div><p className="section-number">02 / WHAT WE DO</p><h2>Four ways we take work <em>off your plate.</em></h2></div><p className="section-lede">Practical systems for the parts of the business that should not depend on one person remembering to do them.</p></div></Reveal>
+          <div className="service-layout">
+            <div className="service-list">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                const isActive = index === activeService;
+                return <button key={service.title} className={`service-tab ${isActive ? "is-active" : ""}`} onClick={() => setActiveService(index)} aria-pressed={isActive}>
+                  <span className="service-tab-num">{index + 1}</span><span className="service-tab-title">{service.title}</span><ArrowUpRight className="service-tab-arrow" size={18} /><Icon className="service-tab-icon" size={20} />
+                </button>;
+              })}
+            </div>
+            <Reveal className={`service-feature accent-${services[activeService].accent}`}>
+              {(() => { const service = services[activeService]; const Icon = service.icon; return <>
+                <div className="feature-top"><span>{service.tag}</span><Icon size={24} /><span className="feature-count">{service.number} / 04</span></div>
+                <h3>{service.title}</h3><p>{service.description}</p>
+                <ul>{service.bullets.map((bullet) => <li key={bullet}><Check size={14} />{bullet}</li>)}</ul>
+                <a href="#contact" className="text-link">Talk about this service <ArrowUpRight size={16} /></a>
+                <div className="feature-watermark">{service.number}</div>
+              </>; })()}
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="process section-pad" id="process">
+        <div className="shell">
+          <Reveal><div className="section-heading"><div><p className="section-number">03 / HOW IT WORKS</p><h2>Getting started could not be <em>easier.</em></h2></div><p className="section-lede">A simple first win, built around your business and explained in plain English.</p></div></Reveal>
+          <div className="process-grid">
+            {[['01', 'A friendly chat', 'Tell us where your time and leads are leaking. We will listen and point out the easiest, highest-impact place to start — no pressure, no cost.'], ['02', 'We build it for you', 'We design everything around your business, set it all up, and walk you through it in plain English. You do not touch the tech.'], ['03', 'You get your time back', 'Your phone gets answered, your admin runs itself, and new customers find you online — while you focus on the work and people that matter. We stay on to keep it all running smoothly.']].map(([number, title, body], index) => <Reveal key={number} delay={index * 80}><article className="process-card"><span>{number}</span><h3>{title}</h3><p>{body}</p><ArrowUpRight size={18} /></article></Reveal>)}
+          </div>
         </div>
       </section>
 
@@ -190,18 +198,18 @@ export default function MarketingDemo() {
         </div>
       </section>
 
-      <section className="faq-section shell section-pad" id="faq">
-        <div className="shell section-pad faq-grid">
+      <section className="faq-section section-pad" id="faq">
+        <div className="shell faq-grid">
           <Reveal><div><p className="section-number">05 / GOOD TO KNOW</p><h2>Start with a question.<br /><em>Leave with a plan.</em></h2><p className="faq-intro">A first conversation is straightforward, useful, and never a sales performance.</p></div></Reveal>
           <Reveal delay={100}><div className="faq-list">{faqs.map(([question, answer], index) => <div className={`faq-item ${openFaq === index ? "is-open" : ""}`} key={question}><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} aria-expanded={openFaq === index}><span>{question}</span><ChevronDown size={18} /></button><div className="faq-answer"><p>{answer}</p></div></div>)}</div></Reveal>
         </div>
       </section>
 
-      <section className="contact shell section-pad" id="contact">
-        <div className="contact-panel">
+      <section className="contact section-pad" id="contact">
+        <div className="shell"><div className="contact-panel">
           <Reveal className="contact-copy"><p className="section-number">06 / YOUR EASIEST WIN</p><h2>Let us find your <em>easiest win.</em></h2><p>You do not need to become a tech expert or spend a fortune. You just need a partner who has done this before. Tell us what is slowing you down, and we will show you the simplest place to start.</p><div className="contact-details"><a href="mailto:jorges@novixone.co"><MessageCircle size={15} />jorges@novixone.co</a><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>
-          <Reveal delay={130}>{sent ? <div className="form-success"><div className="success-icon"><Check size={20} /></div><h3>We will be in touch.</h3><p>Thanks for reaching out. A real person from Novix One will follow up shortly.</p><a className="text-link" href="#top">Back to the top <ArrowUpRight size={15} /></a></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Name<input required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Your name" /></label><label>Email<input required type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="you@company.com" /></label></div><label>What is slowing you down?<select value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}><option>AI voice agents</option><option>Time-saving automations</option><option>Custom web apps</option><option>Beautiful, SEO-ready websites</option><option>Not sure yet</option></select></label><label>Tell us a little more<textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="The more context, the better." /></label><button className="button button-primary form-submit" type="submit">Book your free chat <ArrowUpRight size={16} /></button><p className="form-note">Thirty relaxed minutes that could save you dozens of hours a month.</p></form>}</Reveal>
-        </div>
+          <Reveal delay={130}>{sent ? <div className="form-success"><div className="success-icon"><Check size={20} /></div><h3>We will be in touch.</h3><p>Thanks for reaching out. A real person from Novix One will follow up shortly.</p><a className="text-link" href="#top">Back to the top <ArrowUpRight size={15} /></a></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Name<input required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Your name" /></label><label>Email<input required type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="you@company.com" /></label></div><label>What is slowing you down?<select value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}><option>AI voice agents</option><option>Time-saving automations</option><option>Custom web apps</option><option>Beautiful, SEO-ready websites</option><option>Not sure yet</option></select></label><label>Tell us a little more<textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="The more context, the better." /></label><button className="button button-primary form-submit" type="submit">Book your free chat <ArrowUpRight size={16} /></button><p className="form-note">Thirty relaxed minutes that could save you dozens of hours a month.</p></form>}          </Reveal>
+        </div></div>
       </section>
 
       <footer className="site-footer shell"><Logo /><div className="footer-center"><span>Miami, FL <span className="footer-dot">●</span> Everywhere</span><span>Practical AI for better work.</span></div><div className="footer-links"><a href="#top">Back to top <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© 2026 Novix One. All rights reserved.</span><span>AI. Automated. Elevated.</span></div></footer>
