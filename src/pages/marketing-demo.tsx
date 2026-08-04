@@ -7,9 +7,11 @@ import {
   ChevronDown,
   Clock3,
   Globe2,
+  Hammer,
   Menu,
   MessageCircle,
   PhoneCall,
+  Rocket,
   Sparkles,
   Workflow,
   X,
@@ -112,17 +114,21 @@ export default function MarketingDemo() {
           <a href="#process" onClick={closeMenu}>How it works <ArrowUpRight size={14} /></a>
           <a href="#contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></a>
         </nav>
-        <div className="header-right"><a className="header-email" href="mailto:jorges@novixone.co">jorges@novixone.co</a><button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Close menu" : "Open menu"}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button></div>
+        <div className="header-right"><button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Close menu" : "Open menu"}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button></div>
       </header>
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />AI that finally feels like it is on your side</p></Reveal>
+          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />More time growing your business. Less time managing it.</p></Reveal>
           <Reveal delay={80}><h1>Stop losing <em>time,</em><br />calls, and customers<br />to the busywork.</h1></Reveal>
           <Reveal delay={150}><p className="hero-intro">Novix One helps small businesses and professional offices put AI to work — answering your phones, handling repetitive tasks, and building websites and tools that actually bring people through the door. No tech team required. No jargon. Just help that finally feels like it is on your side.</p></Reveal>
           <Reveal delay={220} className="hero-cta-row"><a className="button button-primary" href="#contact">Book a free evaluation <ArrowUpRight size={16} /></a><a className="text-link" href="#services">See what we build <ArrowDownRight size={16} /></a></Reveal>
           <Reveal delay={290}><p className="hero-trust">Real people, real results, and AI that pays for itself.</p></Reveal>
-          <Reveal className="hero-proof" delay={360}><div><strong>24/7</strong><span>answering</span></div><div><strong>1:1</strong><span>built for you</span></div><div><strong>∞</strong><span>room to grow</span></div></Reveal>
+          <Reveal className="hero-proof" delay={360}>
+            <article className="proof-card"><div className="proof-card-top"><strong>24/7</strong><span className="proof-card-icon"><Clock3 size={20} /></span></div><h3>Always On</h3><p>Your AI never sleeps. Calls answered, chats resolved, appointments booked — even on weekends and holidays.</p></article>
+            <article className="proof-card"><div className="proof-card-top"><strong>2–4 wks</strong><span className="proof-card-icon"><Rocket size={20} /></span></div><h3>Fast Launch</h3><p>From first call to live in weeks, not months. You will see real results before the quarter ends — that is the standard we hold ourselves to.</p></article>
+            <article className="proof-card"><div className="proof-card-top"><strong>100%</strong><span className="proof-card-icon"><Hammer size={20} /></span></div><h3>Built For You</h3><p>No templates, no cookie-cutter software. Everything is designed around your business, your customers, and your goals.</p></article>
+          </Reveal>
         </div>
         <Reveal className="hero-media" delay={180}>
           <div className="video-index">/ 01 — A BETTER WAY TO WORK</div>
