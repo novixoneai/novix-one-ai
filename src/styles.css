@@ -46,7 +46,7 @@
   ::selection { background: #b8d7ef; color: #061426; }
 }
 
-.novix-site { --ink: #f2f5f9; --muted: #a8bed2; --line: rgba(216,228,241,.18); --blue: #9bc8ed; --aqua: #86d5d0; --silver: #c9d3df; --champagne: #e4c994; position: relative; min-height: 100vh; overflow: hidden; background: #0d2c4e; color: var(--ink); }
+.novix-site { --ink: #f2f5f9; --muted: #a8bed2; --line: rgba(216,228,241,.18); --blue: #9bc8ed; --aqua: #86d5d0; --silver: #c9d3df; --champagne: #e4c994; position: relative; min-height: 100vh; overflow: clip; background: #0d2c4e; color: var(--ink); }
 .site-grid { position: absolute; inset: 0; pointer-events: none; opacity: .34; background-image: linear-gradient(rgba(216,228,241,.11) 1px, transparent 1px), linear-gradient(90deg, rgba(216,228,241,.11) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 34%, transparent 78%, rgba(0,0,0,.35)); }.services { background: linear-gradient(180deg, rgba(18,59,102,.32), rgba(13,44,78,.02)); }\n.process { background: #0f3459; }\n.contact { background: #071c32; }
 .site-glow { position: absolute; top: 0; right: -12vw; width: 64vw; height: 56vw; pointer-events: none; opacity: .78; background: radial-gradient(ellipse at 55% 32%, rgba(74,157,220,.34), transparent 58%); filter: blur(12px); }
 .shell { width: min(1180px, calc(100% - 56px)); margin: 0 auto; }
