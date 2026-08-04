@@ -155,12 +155,6 @@ export default function MarketingDemo() {
         </div>
       </section>
 
-      <section className="quote-section section-pad">
-        <div className="shell">
-          <Reveal><div className="quote-block"><div className="quote-mark">“</div><blockquote>AI is rolling in like a tidal wave. The businesses that learn to ride it now will pull years ahead of the ones still watching from the shore.</blockquote><p>The offices and small businesses adopting AI today are not doing anything superhuman — they are just letting the right tools handle the parts that were slowing them down. You can do the same, starting with one simple win.</p></div></Reveal>
-        </div>
-      </section>
-
       <section className="services section-pad" id="services">
         <div className="shell">
           <Reveal><div className="section-heading"><div><p className="section-number">02 / WHAT WE DO</p><h2>Four ways we take work <em>off your plate.</em></h2></div><p className="section-lede">Practical systems for the parts of the business that should not depend on one person remembering to do them.</p></div></Reveal>
@@ -215,6 +209,12 @@ export default function MarketingDemo() {
           <Reveal className="contact-copy"><p className="section-number">06 / GET STARTED</p><h2>Win back the hours<br /><em>that grow your business.</em></h2><p>You do not need to become a tech expert or spend a fortune. You just need a partner who has done this before. Tell us what is slowing you down, and we will show you the simplest place to start.</p><div className="contact-details"><a href="mailto:jorges@novixone.co"><MessageCircle size={15} />jorges@novixone.co</a><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>
           <Reveal delay={130}>{sent ? <div className="form-success"><div className="success-icon"><Check size={20} /></div><h3>We will be in touch.</h3><p>Thanks for reaching out. A real person from Novix One will follow up shortly.</p><a className="text-link" href="#top">Back to the top <ArrowUpRight size={15} /></a></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Name<input required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Your name" /></label><label>Email<input required type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="you@company.com" /></label></div><label>What is slowing you down?<select value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}><option>AI voice agents</option><option>Time-saving automations</option><option>Custom web apps</option><option>Beautiful, SEO-ready websites</option><option>Not sure yet</option></select></label><label>Tell us a little more<textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="The more context, the better." /></label><button className="button button-primary form-submit" type="submit">Book your free evaluation <ArrowUpRight size={16} /></button><p className="form-note">Thirty relaxed minutes that could save you dozens of hours a month.</p></form>}          </Reveal>
         </div></div>
+      </section>
+
+      <section className="quote-section section-pad">
+        <div className="shell">
+          <Reveal><div className="quote-block"><div className="quote-mark">“</div><blockquote>AI is rolling in like a tidal wave. The businesses that learn to ride it now will pull years ahead of the ones still watching from the shore.</blockquote><p>The offices and small businesses adopting AI today are not doing anything superhuman — they are just letting the right tools handle the parts that were slowing them down. You can do the same, starting with one simple win.</p></div></Reveal>
+        </div>
       </section>
 
       <footer className="site-footer shell"><Logo /><div className="footer-center"><span>Miami, FL <span className="footer-dot">●</span> Everywhere</span><span>More time for what moves the business.</span></div><div className="footer-links"><a href="#top">Back to top <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© 2026 Novix One. All rights reserved.</span><span>AI. Automated. Elevated.</span></div></footer>
