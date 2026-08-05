@@ -20,13 +20,13 @@ import {
 const services = [
   {
     icon: PhoneCall,
-    title: "Agentes de voz IA",
+    title: "Agentes de voz con IA",
     short: "Contesta cada llamada",
     tag: "VOZ / 01",
     number: "01",
     accent: "blue",
-    description: "Contesta llamadas 24/7, agenda citas, responde preguntas y captura cada cliente potencial.",
-    bullets: ["Llamadas atendidas", "Citas agendadas", "Clientes capturados"],
+    description: "Contestan llamadas 24/7, agendan citas, responden preguntas y captan cada prospecto.",
+    bullets: ["Llamadas atendidas", "Citas agendadas", "Clientes captados"],
   },
   {
     icon: Workflow,
@@ -50,7 +50,7 @@ const services = [
   },
   {
     icon: Globe2,
-    title: "Sitios web que consiguen clientes",
+    title: "Sitios web que atraen clientes",
     short: "Convierte búsquedas en visitas",
     tag: "WEB / 04",
     number: "04",
@@ -61,9 +61,9 @@ const services = [
 ];
 
 const faqs = [
-  ["¿Funcionará esto con mis herramientas actuales?", "Generalmente sí. Conectamos lo que funciona y solo reemplazamos lo que no."],
-  ["¿Qué tan rápido podemos lanzar?", "Muchos proyectos se lanzan en dos a cuatro semanas, dependiendo del alcance."],
-  ["¿Qué sucede en la evaluación gratuita?", "Identificamos un problema de alto valor y te mostramos el siguiente paso más simple."],
+  ["¿Esto funcionará con las herramientas que ya uso?", "Por lo general, sí. Conectamos lo que ya funciona y solo reemplazamos lo que no."],
+  ["¿Qué tan rápido podemos lanzar?", "La mayoría de los proyectos se lanzan en dos a cuatro semanas, según el alcance."],
+  ["¿Qué pasa en la evaluación gratuita?", "Identificamos un problema de alto impacto y te mostramos el siguiente paso, el más sencillo."],
 ];
 
 function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
@@ -79,7 +79,7 @@ export default function MarketingDemoES() {
   const [activeService, setActiveService] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", service: "Agentes de voz IA", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", service: "Agentes de voz con IA", message: "" });
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
@@ -121,15 +121,15 @@ export default function MarketingDemoES() {
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />Sistemas IA para negocios cansados de trabajo administrativo.</p></Reveal>
+          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />Sistemas de IA para negocios cansados del trabajo administrativo.</p></Reveal>
           <Reveal delay={80}><h1>Deja de perder <em>clientes</em><br />por tareas administrativas.</h1></Reveal>
-          <Reveal delay={150}><p className="hero-intro">Contestamos tus llamadas, automatizamos la administración, y construimos las herramientas digitales que tu negocio necesita—sin agregar otro proyecto a tu lista.</p></Reveal>
-          <Reveal delay={220} className="hero-cta-row"><a className="button button-primary" href="#contact">Agenda tu evaluación gratuita <ArrowUpRight size={16} /></a><a className="text-link" href="#services">Mira cómo podemos ayudarte <ArrowDownRight size={16} /></a></Reveal>
+          <Reveal delay={150}><p className="hero-intro">Contestamos tus llamadas, automatizamos la administración y creamos las herramientas digitales que tu negocio necesita, sin sumar otro proyecto a tu lista.</p></Reveal>
+          <Reveal delay={220} className="hero-cta-row"><a className="button button-primary" href="#contact">Agenda tu evaluación gratuita <ArrowUpRight size={16} /></a><a className="text-link" href="#services">Descubre cómo podemos ayudarte <ArrowDownRight size={16} /></a></Reveal>
           <Reveal delay={290}><p className="hero-trust">Un sistema práctico. Menos trabajo. Más crecimiento.</p></Reveal>
           <Reveal className="hero-proof" delay={360}>
-            <article className="proof-card"><div className="proof-card-top"><strong>24/7</strong><span className="proof-card-icon"><Clock3 size={20} /></span></div><h3>Contesta cada llamada</h3><p>IA maneja llamadas, agenda citas y captura clientes cuando tu equipo está ocupado.</p></article>
-            <article className="proof-card"><div className="proof-card-top"><strong>2–4 sem</strong><span className="proof-card-icon"><Rocket size={20} /></span></div><h3>Lanza sin esperas</h3><p>De la primera conversación a un sistema funcionando en semanas.</p></article>
-            <article className="proof-card"><div className="proof-card-top"><strong>100%</strong><span className="proof-card-icon"><Hammer size={20} /></span></div><h3>Diseñado para ti</h3><p>Sin plantillas. Las herramientas se adaptan a tu flujo de trabajo.</p></article>
+            <article className="proof-card"><div className="proof-card-top"><strong>24/7</strong><span className="proof-card-icon"><Clock3 size={20} /></span></div><h3>Contestamos cada llamada</h3><p>La IA atiende llamadas, agenda citas y capta clientes cuando tu equipo está ocupado.</p></article>
+            <article className="proof-card"><div className="proof-card-top"><strong>2–4 sem</strong><span className="proof-card-icon"><Rocket size={20} /></span></div><h3>Lanza sin esperas</h3><p>De la primera conversación a un sistema en marcha en cuestión de semanas.</p></article>
+            <article className="proof-card"><div className="proof-card-top"><strong>100%</strong><span className="proof-card-icon"><Hammer size={20} /></span></div><h3>Hecho a tu medida</h3><p>Sin plantillas. Las herramientas se adaptan a tu forma de trabajar.</p></article>
           </Reveal>
         </div>
         <Reveal className="hero-media" delay={180}>
@@ -140,17 +140,17 @@ export default function MarketingDemoES() {
         </Reveal>
       </section>
 
-      <div className="signal-strip"><div className="signal-track"><span>Agentes de voz</span><i>✳</i><span>Automatización inteligente</span><i>✳</i><span>Aplicaciones personalizadas</span><i>✳</i><span>Sitios web que consiguen clientes</span><i>✳</i><span>Agentes de voz</span><i>✳</i><span>Automatización inteligente</span><i>✳</i></div></div>
+      <div className="signal-strip"><div className="signal-track"><span>Agentes de voz</span><i>✳</i><span>Automatización inteligente</span><i>✳</i><span>Aplicaciones personalizadas</span><i>✳</i><span>Sitios web que atraen clientes</span><i>✳</i><span>Agentes de voz</span><i>✳</i><span>Automatización inteligente</span><i>✳</i></div></div>
 
       <section className="problem section-pad" id="problems">
         <div className="shell">
-          <Reveal><div className="section-heading"><div><p className="section-number">01 / EL COSTO DEL TRABAJO ADMINISTRATIVO</p><h2>¿Te está costando <em>clientes</em> el trabajo administrativo?</h2></div><p className="section-lede">Llamadas perdidas, seguimiento lento y administración repetitiva frenan silenciosamente tu crecimiento.</p></div></Reveal>
+          <Reveal><div className="section-heading"><div><p className="section-number">01 / EL COSTO DEL TRABAJO ADMINISTRATIVO</p><h2>¿El trabajo administrativo te está costando <em>clientes</em>?</h2></div><p className="section-lede">Llamadas perdidas, seguimientos lentos y tareas repetitivas frenan tu crecimiento sin que lo notes.</p></div></Reveal>
           <div className="problem-list">
             {[
-              ["Las llamadas no se contestan.", "Una llamada perdida suele ser un cliente perdido. La IA contesta, califica y agenda—incluso después de horas."],
-              ["Los clientes potenciales esperan demasiado.", "La rapidez gana. Respondemos mientras el interés es alto y mantenemos a los prospectos avanzando."],
-              ["Tu equipo repite el mismo trabajo.", "Automatiza agendamiento, recordatorios, evaluaciones y seguimientos para que tu equipo se enfoque en clientes."],
-              ["Los clientes no te encuentran.", "Un sitio web que no aparece en búsquedas no funciona. Construimos sitios rápidos y optimizados que atraen a la gente correcta."],
+              ["Las llamadas quedan sin contestar.", "Una llamada perdida suele ser un cliente perdido. La IA contesta, califica y agenda, incluso fuera de horario."],
+              ["Los prospectos esperan demasiado.", "La rapidez gana. Respondemos mientras el interés está alto y mantenemos a los prospectos en movimiento."],
+              ["Tu equipo repite el mismo trabajo.", "Automatizamos agendamiento, recordatorios, evaluaciones y seguimientos para que tu equipo se enfoque en los clientes."],
+              ["Los clientes no te encuentran.", "Un sitio web que no aparece en las búsquedas no sirve. Creamos sitios rápidos y optimizados que atraen a las personas correctas."],
             ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div><ArrowUpRight className="problem-arrow" size={19} /></article></Reveal>)}
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function MarketingDemoES() {
 
       <section className="services section-pad" id="services">
         <div className="shell">
-          <Reveal><div className="section-heading"><div><p className="section-number">02 / SOLUCIONES</p><h2>El trabajo que te quitamos <em>de encima.</em></h2></div><p className="section-lede">Sistemas IA prácticos y herramientas digitales diseñadas para tu negocio.</p></div></Reveal>
+          <Reveal><div className="section-heading"><div><p className="section-number">02 / SOLUCIONES</p><h2>El trabajo que te quitamos <em>de encima.</em></h2></div><p className="section-lede">Sistemas de IA prácticos y herramientas digitales diseñados para tu negocio.</p></div></Reveal>
           <div className="service-layout">
             <div className="service-list">
               {services.map((service, index) => {
@@ -184,12 +184,12 @@ export default function MarketingDemoES() {
 
       <section className="process section-pad" id="process">
         <div className="shell">
-          <Reveal><div className="section-heading"><div><p className="section-number">03 / EL PROCESO SIMPLE</p><h2>De tu desafío a <em>un sistema funcionando.</em></h2></div><p className="section-lede">Comienza con un problema. Nosotros hacemos el resto.</p></div></Reveal>
+          <Reveal><div className="section-heading"><div><p className="section-number">03 / EL PROCESO, PASO A PASO</p><h2>De tu desafío a un sistema funcionando.</h2></div><p className="section-lede">Empieza con un problema. Del resto nos encargamos nosotros.</p></div></Reveal>
           <div className="process-grid">
             {[
-              ['01', 'Dinos qué te está frenando.', 'Una conversación gratuita identifica dónde comenzar con más valor.'],
-              ['02', 'Construimos y lanzamos.', 'Manejamos la configuración y te lo explicamos sin tecnicismos.'],
-              ['03', 'Recupera tu tiempo.', 'Tu sistema funciona en el fondo mientras te enfocas en clientes.'],
+              ['01', 'Cuéntanos qué te está frenando.', 'Una conversación gratuita para identificar dónde empezar con mayor impacto.'],
+              ['02', 'Construimos y lanzamos.', 'Nos encargamos de la configuración y te lo explicamos sin tecnicismos.'],
+              ['03', 'Recupera tu tiempo.', 'Tu sistema trabaja en segundo plano mientras tú te enfocas en tus clientes.'],
             ].map(([number, title, body], index) => (
               <Reveal key={number} delay={index * 80}>
                 <article className={`process-card process-card-${index + 1}`}>
@@ -207,7 +207,7 @@ export default function MarketingDemoES() {
 
       <section className="why-section" id="why">
         <div className="why-grid shell section-pad">
-          <Reveal className="why-copy"><p className="section-number">04 / POR QUÉ NOVIX ONE</p><h2>IA práctica. <em>Ayuda humana.</em></h2><ul className="why-list"><li><Check size={16} /><span><strong>Sin jerga.</strong> Consejos claros y directos.</span></li><li><Check size={16} /><span><strong>Diseñado para tu negocio.</strong> Adaptamos el sistema a tu flujo de trabajo.</span></li><li><Check size={16} /><span><strong>Apoyo después del lanzamiento.</strong> Seguimos disponibles conforme tus necesidades cambian.</span></li></ul><a className="text-link" href="#contact">Mira qué podemos automatizar <ArrowUpRight size={16} /></a></Reveal>
+          <Reveal className="why-copy"><p className="section-number">04 / POR QUÉ NOVIX ONE</p><h2>IA práctica. <em>Ayuda humana.</em></h2><ul className="why-list"><li><Check size={16} /><span><strong>Sin jerga.</strong> Consejos claros y directos.</span></li><li><Check size={16} /><span><strong>Diseñado para tu negocio.</strong> Adaptamos el sistema a tu forma de trabajar.</span></li><li><Check size={16} /><span><strong>Acompañamiento después del lanzamiento.</strong> Seguimos a tu lado conforme cambian tus necesidades.</span></li></ul><a className="text-link" href="#contact">Descubre qué podemos automatizar <ArrowUpRight size={16} /></a></Reveal>
           <Reveal className="why-art" delay={170}><div className="why-art-ring ring-one" /><div className="why-art-ring ring-two" /><div className="why-art-core"><Sparkles size={22} /></div></Reveal>
         </div>
       </section>
@@ -221,18 +221,18 @@ export default function MarketingDemoES() {
 
       <section className="contact section-pad" id="contact">
         <div className="shell"><div className="contact-panel">
-          <Reveal className="contact-copy"><p className="section-number">06 / COMIENZA AQUÍ</p><h2>Recupera tu <em>tiempo.</em></h2><p>Cuéntanos qué está frenando el negocio. Te mostraremos dónde la IA puede ayudarte.</p><div className="contact-details"><a href="mailto:jorges@novixone.co"><MessageCircle size={15} />jorges@novixone.co</a><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>
-          <Reveal delay={130}>{sent ? <div className="form-success"><div className="success-icon"><Check size={20} /></div><h3>Nos pondremos en contacto.</h3><p>Gracias por escribir. Alguien del equipo de Novix One te llamará pronto.</p><a className="text-link" href="#top">Vuelve al inicio <ArrowUpRight size={15} /></a></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Nombre<input required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Tu nombre" /></label><label>Email<input required type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="tu@empresa.com" /></label></div><label>¿Qué está frenando tu negocio?<select value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}><option>Agentes de voz IA</option><option>Automatización que ahorra tiempo</option><option>Aplicaciones web personalizadas</option><option>Sitios web bonitos y optimizados</option><option>Aún no estoy seguro</option></select></label><label>Cuéntanos un poco más<textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="Más contexto es mejor." /></label><button className="button button-primary form-submit" type="submit">Agenda mi evaluación gratuita <ArrowUpRight size={16} /></button><p className="form-note">30 minutos. Un paso práctico hacia adelante.</p></form>}          </Reveal>
+          <Reveal className="contact-copy"><p className="section-number">06 / COMIENZA AQUÍ</p><h2>Recupera tu <em>tiempo.</em></h2><p>Cuéntanos qué está frenando tu negocio. Te mostraremos dónde la IA puede ayudarte.</p><div className="contact-details"><a href="mailto:jorges@novixone.co"><MessageCircle size={15} />jorges@novixone.co</a><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>
+          <Reveal delay={130}>{sent ? <div className="form-success"><div className="success-icon"><Check size={20} /></div><h3>Nos pondremos en contacto.</h3><p>Gracias por escribir. Alguien del equipo de Novix One te llamará pronto.</p><a className="text-link" href="#top">Volver al inicio <ArrowUpRight size={15} /></a></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Nombre<input required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Tu nombre" /></label><label>Email<input required type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="tu@empresa.com" /></label></div><label>¿Qué está frenando tu negocio?<select value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}><option>Agentes de voz con IA</option><option>Automatización que ahorra tiempo</option><option>Aplicaciones web personalizadas</option><option>Sitios web que atraen clientes</option><option>Aún no estoy seguro</option></select></label><label>Cuéntanos un poco más<textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="Mientras más contexto, mejor." /></label><button className="button button-primary form-submit" type="submit">Agenda mi evaluación gratuita <ArrowUpRight size={16} /></button><p className="form-note">30 minutos. Un paso práctico hacia adelante.</p></form>}          </Reveal>
         </div></div>
       </section>
 
       <section className="quote-section section-pad">
         <div className="shell">
-          <Reveal><div className="quote-block"><div className="quote-mark">"</div><blockquote>La IA debe devolver tiempo a tu negocio—no crear más trabajo.</blockquote><p>Comienza con una victoria práctica.</p></div></Reveal>
+          <Reveal><div className="quote-block"><div className="quote-mark">"</div><blockquote>La IA debe devolverle tiempo a tu negocio, no crearte más trabajo.</blockquote><p>Empieza con una victoria práctica.</p></div></Reveal>
         </div>
       </section>
 
-      <footer className="site-footer shell"><Logo /><div className="footer-center"><span>Miami, FL <span className="footer-dot">●</span> En todas partes</span><span>Más tiempo. Menos trabajo administrativo.</span></div><div className="footer-links"><a href="#top">Vuelve al inicio <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© 2026 Novix One.</span><span>IA para el trabajo que importa.</span></div></footer>
+      <footer className="site-footer shell"><Logo /><div className="footer-center"><span>Miami, FL <span className="footer-dot">●</span> En todas partes</span><span>Más tiempo. Menos trabajo administrativo.</span></div><div className="footer-links"><a href="#top">Volver al inicio <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© 2026 Novix One.</span><span>IA para el trabajo que importa.</span></div></footer>
 
       <a className="floating-call" href="#contact" aria-label="Agenda una evaluación gratuita"><Clock3 size={17} /><span>Agenda tu evaluación</span></a>
       {menuOpen && <button className="menu-backdrop" onClick={closeMenu} aria-label="Cerrar navegación" />}
