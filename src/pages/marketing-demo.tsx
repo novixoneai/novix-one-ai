@@ -113,7 +113,10 @@ export default function MarketingDemo() {
           <a href="#process" onClick={closeMenu}>Process <ArrowUpRight size={14} /></a>
           <a href="#contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></a>
         </nav>
-        <div className="header-right"><button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Close menu" : "Open menu"}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button></div>
+        <div className="header-right">
+          <a href="/es" className="language-link" aria-label="Ver en español">ES</a>
+          <button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Close menu" : "Open menu"}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button>
+        </div>
       </header>
 
       <section className="hero shell" id="top">
