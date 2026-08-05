@@ -114,7 +114,7 @@ export default function MarketingDemoES() {
           <a href="#contact" onClick={closeMenu}>Contacto <ArrowUpRight size={14} /></a>
         </nav>
         <div className="header-right">
-          <a href="/" className="language-link" aria-label="View in English">EN</a>
+          <a href="/" className="language-link" aria-label="View in English"><span className="flag">🇺🇸</span> EN</a>
           <button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button>
         </div>
       </header>
