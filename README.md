@@ -10,10 +10,19 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 - The contact form is client-side functional. On submit it switches to a confirmation state; it does not send data to a server yet.
 - The hero video and current Novix One logo assets are stored in `public/novix-hero.mp4` and `public/images/` so the site works offline on this Zo computer and in production.
 - The design respects reduced-motion preferences and is responsive for mobile navigation, stacked sections, and touch-friendly controls.
+- **Bilingual support**: The site includes both English (`/`) and US Spanish (`/es`) versions with language switcher in the header (EN/ES). The Spanish version uses optimized marketing copy tailored for Spanish-speaking audiences.
 
 ## Architecture
 
-This is a Zo Site using Bun + Hono + Vite + React. The runtime is managed by Zo; do not start or restart the server manually. The main page is `src/pages/marketing-demo.tsx`, global design and responsive styles are in `src/styles.css`, and static assets live in `public/`.
+This is a Zo Site using Bun + Hono + Vite + React. The runtime is managed by Zo; do not start or restart the server manually. 
+
+**Pages:**
+- `src/pages/marketing-demo.tsx` — English version (served at `/`)
+- `src/pages/marketing-demo-es.tsx` — US Spanish version (served at `/es`)
+
+**Styling & assets:**
+- Global design and responsive styles are in `src/styles.css`
+- Static assets live in `public/`
 
 ## Development and verification
 
