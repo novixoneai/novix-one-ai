@@ -1,0 +1,18 @@
+binary
+mkdir public_html
+put dist/index.html public_html/
+put dist/favicon.svg public_html/
+put dist/assets/index-AF0lvpz8.js public_html/assets/
+put dist/assets/index-HqW2KPMC.css public_html/assets/
+mkdir public_html/card
+put dist/card/card-back.png public_html/card/
+put dist/card/card-front.png public_html/card/
+put dist/card/favicon-180.png public_html/card/
+put dist/card/favicon-32.png public_html/card/
+put dist/card/index.html public_html/card/
+mkdir public_html/images
+put dist/images/novix-one-logo-full.png public_html/images/
+put dist/images/novix-one-logo.png public_html/images/
+put dist/images/pegasus.png public_html/images/
+put dist/novix-hero.mp4 public_html/
+quit

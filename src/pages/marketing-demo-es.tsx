@@ -153,7 +153,7 @@ export default function MarketingDemoES() {
               ["Los prospectos esperan demasiado.", "La rapidez gana. Respondemos mientras el interés está alto y mantenemos a los prospectos en movimiento."],
               ["Tu equipo repite el mismo trabajo.", "Automatizamos agendamiento, recordatorios, evaluaciones y seguimientos para que tu equipo se enfoque en los clientes."],
               ["Los clientes no te encuentran.", "Un sitio web que no aparece en las búsquedas no sirve. Creamos sitios rápidos y optimizados que atraen a las personas correctas."],
-            ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div><ArrowUpRight className="problem-arrow" size={19} /></article></Reveal>)}
+            ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></article></Reveal>)}
           </div>
         </div>
       </section>
@@ -199,7 +199,7 @@ export default function MarketingDemoES() {
                   <div className="process-card-rule" />
                   <h3>{title}</h3>
                   <p>{body}</p>
-                  <div className="process-card-footer"><span>{index === 0 ? "Comienza aquí" : index === 1 ? "Nosotros lo hacemos" : "Sigue creciendo"}</span><ArrowUpRight size={18} /></div>
+                  <div className="process-card-footer"><span>{index === 0 ? "Comienza aquí" : index === 1 ? "Nosotros lo hacemos" : "Sigue creciendo"}</span></div>
                 </article>
               </Reveal>
             ))}

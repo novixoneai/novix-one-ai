@@ -153,7 +153,7 @@ export default function MarketingDemo() {
               ["Leads wait too long.", "Fast follow-up wins. We respond while interest is high and keep prospects moving."],
               ["Your team repeats the same work.", "Automate scheduling, reminders, intake, and follow-up so people can focus on clients."],
               ["Customers cannot find you.", "A website that does not show up is not working. We build fast, search-ready sites that bring in the right people."],
-            ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div><ArrowUpRight className="problem-arrow" size={19} /></article></Reveal>)}
+            ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></article></Reveal>)}
           </div>
         </div>
       </section>
@@ -199,7 +199,7 @@ export default function MarketingDemo() {
                   <div className="process-card-rule" />
                   <h3>{title}</h3>
                   <p>{body}</p>
-                  <div className="process-card-footer"><span>{index === 0 ? "Start here" : index === 1 ? "We handle it" : "Keep growing"}</span><ArrowUpRight size={18} /></div>
+                  <div className="process-card-footer"><span>{index === 0 ? "Start here" : index === 1 ? "We handle it" : "Keep growing"}</span></div>
                 </article>
               </Reveal>
             ))}
