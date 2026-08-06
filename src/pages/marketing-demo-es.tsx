@@ -186,7 +186,7 @@ export default function MarketingDemoES() {
 
       <section className="process section-pad" id="process">
         <div className="shell">
-          <Reveal><div className="section-heading"><div><p className="section-number">03 / EL PROCESO, PASO A PASO</p><h2>De tu desafío a <em>un sistema funcionando.</em></h2></div><p className="section-lede">Empieza con un problema. Del resto nos encargamos nosotros.</p></div></Reveal>
+          <Reveal><div className="section-heading"><div><p className="section-number">03 / EL PROCESO, PASO A PASO</p><h2>De tu obstáculo a <em>un sistema funcionando.</em></h2></div><p className="section-lede">Empieza con un problema. Del resto nos encargamos nosotros.</p></div></Reveal>
           <div className="process-grid">
             {[
               ['01', 'Cuéntanos qué te está frenando.', 'Una conversación gratuita para identificar dónde empezar con mayor impacto.'],
