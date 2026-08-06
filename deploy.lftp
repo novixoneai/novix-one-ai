@@ -1,0 +1,8 @@
+set ftp:list-options -la
+set ftp:passive-mode on
+open -u $FTP_USER,$FTP_PASSWORD ftp://$FTP_HOST:$FTP_PORT
+
+# Delete old files to ensure clean deployment
+mirror -e -R --ignore-time --parallel=4 dist/ /public_html/
+
+quit
