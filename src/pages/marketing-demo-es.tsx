@@ -210,7 +210,7 @@ export default function MarketingDemoES() {
       <section className="why-section" id="why">
         <div className="why-grid shell section-pad">
           <Reveal className="why-copy"><p className="section-number">04 / POR QUÉ NOVIX ONE</p><h2>IA práctica. <em>Ayuda humana.</em></h2><ul className="why-list"><li><Check size={16} /><span><strong>Sin jerga.</strong> Consejos claros y directos.</span></li><li><Check size={16} /><span><strong>Diseñado para tu negocio.</strong> Adaptamos el sistema a tu forma de trabajar.</span></li><li><Check size={16} /><span><strong>Acompañamiento después del lanzamiento.</strong> Seguimos a tu lado conforme cambian tus necesidades.</span></li></ul><a className="text-link" href="#contact">Descubre qué podemos automatizar <ArrowUpRight size={16} /></a></Reveal>
-          <Reveal className="why-art" delay={170}><div className="why-art-ring ring-one" /><div className="why-art-ring ring-two" /><div className="why-art-core"><Sparkles size={22} /></div></Reveal>
+          <Reveal className="why-art" delay={170}><div className="why-art-ring ring-one" /><div className="why-art-ring ring-two" /><div className="why-art-core"><div className="waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></Reveal>
         </div>
       </section>
 

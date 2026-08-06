@@ -210,7 +210,7 @@ export default function MarketingDemo() {
       <section className="why-section" id="why">
         <div className="why-grid shell section-pad">
           <Reveal className="why-copy"><p className="section-number">04 / WHY NOVIX ONE</p><h2>Practical AI. <em>Human help.</em></h2><ul className="why-list"><li><Check size={16} /><span><strong>Plain English.</strong> Clear advice, no jargon.</span></li><li><Check size={16} /><span><strong>Built for your business.</strong> We fit the system to your workflow.</span></li><li><Check size={16} /><span><strong>Support after launch.</strong> We stay available as your needs change.</span></li></ul><a className="text-link" href="#contact">See what we can automate <ArrowUpRight size={16} /></a></Reveal>
-          <Reveal className="why-art" delay={170}><div className="why-art-ring ring-one" /><div className="why-art-ring ring-two" /><div className="why-art-core"><Sparkles size={22} /></div></Reveal>
+          <Reveal className="why-art" delay={170}><div className="why-art-ring ring-one" /><div className="why-art-ring ring-two" /><div className="why-art-core"><div className="waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></Reveal>
         </div>
       </section>
 
