@@ -9,6 +9,7 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 - Service content is interactive: selecting a service tab updates the featured service panel without navigating away, and FAQ items expand in place.
 - The contact form is client-side functional. On submit it switches to a confirmation state; it does not send data to a server yet.
 - The hero video and current Novix One logo assets are stored in `public/novix-hero.mp4` and `public/images/` so the site works offline on this Zo computer and in production.
+- The browser favicon uses the supplied transparent N1 mark converted into a self-contained SVG at `public/favicon.svg`, so it works without an additional favicon asset request.
 - The design respects reduced-motion preferences and is responsive for mobile navigation, stacked sections, and touch-friendly controls.
 - **Bilingual support**: The site includes both English (`/`) and US Spanish (`/es`) versions with language switcher in the header (EN/ES). The Spanish version uses optimized marketing copy tailored for Spanish-speaking audiences.
 
