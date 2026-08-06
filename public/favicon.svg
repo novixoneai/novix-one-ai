@@ -1,46 +1,37 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+    <filter id="brightGlow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <linearGradient id="nGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="oneGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
-    </linearGradient>
   </defs>
 
-  <!-- Subtle background for depth -->
-  <rect width="128" height="128" fill="#0f172a" rx="16"/>
+  <!-- Transparent background for maximum contrast against any background -->
 
-  <!-- N with bright blue gradient and glow -->
-  <g filter="url(#glow)">
+  <!-- N - Bright cyan/turquoise for maximum contrast -->
+  <g filter="url(#brightGlow)">
     <!-- Left vertical bar -->
-    <polygon points="20,36 30,36 30,78 20,86" fill="url(#nGradient)" stroke="#60a5fa" stroke-width="0.5"/>
+    <polygon points="20,34 32,34 32,80 20,88" fill="#00d9ff" stroke="#00ffff" stroke-width="1"/>
 
     <!-- Diagonal bar -->
-    <polygon points="30,36 78,92 68,92 20,36" fill="url(#nGradient)" stroke="#60a5fa" stroke-width="0.5"/>
+    <polygon points="32,34 80,94 68,94 20,34" fill="#00d9ff" stroke="#00ffff" stroke-width="1"/>
 
     <!-- Right vertical bar -->
-    <polygon points="68,92 78,84 78,36 68,36" fill="url(#nGradient)" stroke="#60a5fa" stroke-width="0.5"/>
+    <polygon points="68,94 80,86 80,34 68,34" fill="#00d9ff" stroke="#00ffff" stroke-width="1"/>
   </g>
 
-  <!-- Bright Blue 1 with gradient and glow -->
-  <g filter="url(#glow)">
+  <!-- 1 - Bright lime/electric green for contrast -->
+  <g filter="url(#brightGlow)">
     <!-- Main vertical stroke -->
-    <rect x="88" y="30" width="10" height="66" fill="url(#oneGradient)" stroke="#93c5fd" stroke-width="0.5" rx="1"/>
+    <rect x="88" y="28" width="12" height="70" fill="#00ff41" stroke="#33ff66" stroke-width="1" rx="1"/>
 
-    <!-- Top serif/arrow -->
-    <polygon points="82,30 98,30 90,20" fill="url(#oneGradient)" stroke="#93c5fd" stroke-width="0.5"/>
+    <!-- Top serif -->
+    <polygon points="80,28 104,28 92,14" fill="#00ff41" stroke="#33ff66" stroke-width="1"/>
 
     <!-- Bottom serif -->
-    <polygon points="85,96 101,96 93,103" fill="url(#oneGradient)" stroke="#93c5fd" stroke-width="0.5"/>
+    <polygon points="82,98 106,98 94,110" fill="#00ff41" stroke="#33ff66" stroke-width="1"/>
   </g>
 </svg>
