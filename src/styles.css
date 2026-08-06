@@ -213,6 +213,8 @@
   .problem-arrow { display: block; }
 }
 @media (max-width: 480px) {
+  .section-pad { padding-top: 48px; padding-bottom: 48px; }
+  .section-heading { margin-bottom: 28px; }
   .quote-block { grid-template-columns: 1fr; gap: 10px; }
   .quote-block blockquote, .quote-block > p { grid-column: auto; }
   .quote-mark { font-size: 54px; }
