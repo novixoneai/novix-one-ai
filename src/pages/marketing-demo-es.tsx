@@ -169,7 +169,7 @@ export default function MarketingDemoES() {
                 </button>;
               })}
             </div>
-            <Reveal className={`service-feature accent-${services[activeService].accent}`}>
+            <div key={activeService} className={`service-feature accent-${services[activeService].accent}`} aria-live="polite">
               {(() => { const service = services[activeService]; const Icon = service.icon; return <>
                 <div className="feature-top"><span>{service.tag}</span><Icon size={24} /><span className="feature-count">{service.number} / 04</span></div>
                 <h3>{service.title}</h3><p>{service.description}</p>
@@ -177,7 +177,7 @@ export default function MarketingDemoES() {
                 <a href="#contact" className="text-link">Hablemos de este servicio <ArrowUpRight size={16} /></a>
                 <div className="feature-watermark">{service.number}</div>
               </>; })()}
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>
