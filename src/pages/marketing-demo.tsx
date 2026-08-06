@@ -110,9 +110,9 @@ export default function MarketingDemo() {
       <header className="site-header">
         <Logo />
         <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Main navigation">
-          <a href="#problems" onClick={closeMenu}>Problems <ArrowUpRight size={14} /></a>
-          <a href="#services" onClick={closeMenu}>Solutions <ArrowUpRight size={14} /></a>
-          <a href="#process" onClick={closeMenu}>Process <ArrowUpRight size={14} /></a>
+          <a href="#problems" onClick={closeMenu}>Your Problems <ArrowUpRight size={14} /></a>
+          <a href="#services" onClick={closeMenu}>Our Solutions <ArrowUpRight size={14} /></a>
+          <a href="#process" onClick={closeMenu}>The Process <ArrowUpRight size={14} /></a>
           <a href="#contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></a>
         </nav>
         <div className="header-right">
@@ -225,7 +225,9 @@ export default function MarketingDemo() {
         <div className="shell"><div className="contact-panel">
           <Reveal className="contact-copy"><p className="section-number">06 / START HERE</p><h2>Get your <em>time back.</em></h2><p>Tell us what is slowing the business down. We will show you where AI can help.</p><div className="contact-details"><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>
           <Reveal delay={130}>{sent ? <div className="form-success"><div className="success-icon"><Check size={20} /></div><h3>Choose a time that works.</h3><p>Your details are noted. Pick a time on the calendar and we will see you then.</p><button className="button button-primary form-submit" type="button" onClick={() => setBookingOpen(true)}>Open the calendar <ArrowUpRight size={16} /></button><a className="text-link" href="#top">Back to the top <ArrowUpRight size={15} /></a></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Name<input required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Your name" /></label><label>Email<input required type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="you@company.com" /></label></div><label>Which solution interests you?<select value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}><option>AI voice agents</option><option>Time-saving automations</option><option>Custom web apps</option><option>Beautiful, SEO-ready websites</option><option>Not sure yet</option></select></label><label>Tell us a little more<textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="The more context, the better." /></label><button className="button button-primary form-submit" type="submit">Book my free evaluation <ArrowUpRight size={16} /></button><p className="form-note">45 minutes. One practical next step.</p></form>}          </Reveal>
-          {bookingOpen && <div className="booking-modal-backdrop" role="presentation" onClick={() => setBookingOpen(false)}><div className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title" onClick={(event) => event.stopPropagation()}><div className="booking-modal-header"><div><p className="section-number">BOOKING</p><h3 id="booking-title">Choose a time for your free evaluation.</h3></div><button className="booking-modal-close" type="button" onClick={() => setBookingOpen(false)} aria-label="Close calendar">×</button></div><iframe src="https://cal.com/novixone/45min?user=novixone" title="Schedule your free evaluation" /></div></div>}
+          {bookingOpen && <div className="booking-modal-backdrop" role="presentation" onClick={() => setBookingOpen(false)}><div className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title" onClick={(event) => event.stopPropagation()}><div className="booking-modal-header"><div><p className="section-number">BOOKING</p><h3 id="booking-title">Choose a time for your free evaluation.</h3></div><button className="booking-modal-close" type="button" onClick={() => setBookingOpen(false)} aria-label="Close calendar">×</button></div><style>{`
+            .cal-embed { --cal-brand-color: #9bc8ed !important; --cal-brand-text-color: #061426 !important; }
+          `}</style><iframe src="https://cal.com/novixone/45min?user=novixone&theme=light" title="Schedule your free evaluation" style={{ colorScheme: 'light' }} /></div></div>}
         </div></div>
       </section>
 

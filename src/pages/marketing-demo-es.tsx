@@ -110,9 +110,9 @@ export default function MarketingDemoES() {
       <header className="site-header">
         <Logo />
         <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Navegación principal">
-          <a href="#problems" onClick={closeMenu}>Desafíos <ArrowUpRight size={14} /></a>
-          <a href="#services" onClick={closeMenu}>Soluciones <ArrowUpRight size={14} /></a>
-          <a href="#process" onClick={closeMenu}>Proceso <ArrowUpRight size={14} /></a>
+          <a href="#problems" onClick={closeMenu}>Tus Problemas <ArrowUpRight size={14} /></a>
+          <a href="#services" onClick={closeMenu}>Nuestras Soluciones <ArrowUpRight size={14} /></a>
+          <a href="#process" onClick={closeMenu}>El Proceso <ArrowUpRight size={14} /></a>
           <a href="#contact" onClick={closeMenu}>Contacto <ArrowUpRight size={14} /></a>
         </nav>
         <div className="header-right">
@@ -225,7 +225,9 @@ export default function MarketingDemoES() {
         <div className="shell"><div className="contact-panel">
           <Reveal className="contact-copy"><p className="section-number">06 / COMIENZA AQUÍ</p><h2>Recupera tu <em>tiempo.</em></h2><p>Cuéntanos qué está frenando tu negocio. Te mostraremos dónde la IA puede ayudarte.</p><div className="contact-details"><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>
           <Reveal delay={130}>{sent ? <div className="form-success"><div className="success-icon"><Check size={20} /></div><h3>Elige un horario.</h3><p>Recibimos tus datos. Elige una hora en el calendario y nos vemos ahí.</p><button className="button button-primary form-submit" type="button" onClick={() => setBookingOpen(true)}>Abrir el calendario <ArrowUpRight size={16} /></button><a className="text-link" href="#top">Volver al inicio <ArrowUpRight size={15} /></a></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Nombre<input required value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} placeholder="Tu nombre" /></label><label>Email<input required type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} placeholder="tu@empresa.com" /></label></div><label>¿Cuál de nuestras soluciones te interesa?<select value={form.service} onChange={(event) => setForm({ ...form, service: event.target.value })}><option>Agentes de voz con IA</option><option>Automatización que ahorra tiempo</option><option>Aplicaciones web personalizadas</option><option>Sitios web que atraen clientes</option><option>Aún no estoy seguro</option></select></label><label>Cuéntanos un poco más<textarea rows={3} value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} placeholder="Mientras más contexto, mejor." /></label><button className="button button-primary form-submit" type="submit">Agenda mi evaluación gratuita <ArrowUpRight size={16} /></button><p className="form-note">45 minutos. Un paso práctico hacia adelante.</p></form>}          </Reveal>
-          {bookingOpen && <div className="booking-modal-backdrop" role="presentation" onClick={() => setBookingOpen(false)}><div className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title" onClick={(event) => event.stopPropagation()}><div className="booking-modal-header"><div><p className="section-number">AGENDA</p><h3 id="booking-title">Elige un horario para tu evaluación gratuita.</h3></div><button className="booking-modal-close" type="button" onClick={() => setBookingOpen(false)} aria-label="Cerrar calendario">×</button></div><iframe src="https://cal.com/novixone/45min?user=novixone" title="Agenda tu evaluación gratuita" /></div></div>}
+          {bookingOpen && <div className="booking-modal-backdrop" role="presentation" onClick={() => setBookingOpen(false)}><div className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title" onClick={(event) => event.stopPropagation()}><div className="booking-modal-header"><div><p className="section-number">AGENDA</p><h3 id="booking-title">Elige un horario para tu evaluación gratuita.</h3></div><button className="booking-modal-close" type="button" onClick={() => setBookingOpen(false)} aria-label="Cerrar calendario">×</button></div><style>{`
+            .cal-embed { --cal-brand-color: #9bc8ed !important; --cal-brand-text-color: #061426 !important; }
+          `}</style><iframe src="https://cal.com/novixone/45min?user=novixone&theme=light" title="Agenda tu evaluación gratuita" style={{ colorScheme: 'light' }} /></div></div>}
         </div></div>
       </section>
 
