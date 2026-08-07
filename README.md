@@ -13,7 +13,7 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 - The design respects reduced-motion preferences and is responsive for mobile navigation, stacked sections, and touch-friendly controls. The busywork problem items use contrasting gradient cards with accent glows, staggered idle motion, and lift-on-hover interactions; reduced-motion preferences disable the idle animation.
 - **Scheduling**: The English and Spanish contact forms open the public Cal.com event at `https://cal.com/novixone/45min?user=novixone` inside a branded, responsive modal.
 - **Bilingual support**: The site includes both English (`/`) and US Spanish (`/es`) versions with language switcher in the header (EN/ES). The Spanish version uses optimized marketing copy tailored for Spanish-speaking audiences.
-- **Industry-specific landing pages**: The site includes specialized landing page prototypes for targeted verticals (e.g., `/law-offices` for Miami law firms). The law-offices page adapts the elegant Novix One design for legal services with law firm-specific messaging about missed calls (1 in 3 calls unanswered), lead capture costs ($90K+/year), and confidentiality compliance (Florida Bar built-in). It features the Appointment & Messages Desk showcase, a 30-day paid pilot pricing model, and Cal.com scheduling for free intake audits.
+- **Industry-specific landing pages**: The site includes specialized landing page prototypes for targeted verticals (e.g., `/law-offices` for Miami law firms). Rather than a custom visual system, this page is built entirely from the homepage's shared global classes (`novix-site`, `hero`, `problem`, `services`/`service-tab`/`service-feature`, `why-section`, `stats-row`, `proof-card`, `booking-modal`, `site-footer`) defined in `src/styles.css`, so any future page for a new vertical should follow the same pattern: reuse the shared classes and only add small scoped `<style>` blocks (like `.cost-section`/`.cost-card` on this page) for layout pieces that don't already exist. Content covers the missed-call problem (1 in 3 unanswered, $90K/year lost), the AI receptionist solution (reusing the homepage's interactive service-tab/service-feature component), and the Appointment & Messages Desk (embedding the actual product screenshot at `public/images/appointment-desk.png`, not a stock photo). CTAs open the same Cal.com booking modal as the homepage.
 
 ## Architecture
 
@@ -22,7 +22,7 @@ This is a Zo Site using Bun + Hono + Vite + React. The runtime is managed by Zo;
 **Pages:**
 - `src/pages/marketing-demo.tsx` — English version (served at `/`)
 - `src/pages/marketing-demo-es.tsx` — US Spanish version (served at `/es`)
-- `src/pages/law-offices.tsx` — Law firm landing page (served at `/law-offices`) — AI receptionist for Miami law firms with 24/7 call handling, English/Spanish bilingual support, calendar booking, and Florida Bar confidentiality compliance. Includes problem/solution messaging, cost of missed leads, process steps, FAQ, and 30-day pilot pricing model.
+- `src/pages/law-offices.tsx` — Law firm landing page (served at `/law-offices`) — built from the homepage's shared design-system classes (see Project Notes below), with law firm-specific copy: missed-call problem, cost of lost leads, the AI receptionist solution, and the Appointment & Messages Desk.
 
 **Styling & assets:**
 - Global design and responsive styles are in `src/styles.css`
@@ -34,6 +34,7 @@ This is a Zo Site using Bun + Hono + Vite + React. The runtime is managed by Zo;
 - Type check with `bunx tsc --noEmit`.
 - Build with `bun run build` when validating production output.
 - Use `agent-browser` against the managed preview port for visual and interaction checks. Do not expose localhost URLs to visitors.
+- **Caveat**: `server.ts`'s Vite dev instance is created with `hmr: false, ws: false`, so edits to page files sometimes are not picked up by the running dev server (confirmed via `curl`ing the raw transformed module and seeing stale content). If a page edit isn't reflecting after a normal wait, find the dev process with `lsof -i :<local_port>`, `kill` it, and if the external supervisor doesn't respawn it within ~60-90s, restart it directly with `bun run dev` from the project root (the same command `zosite.json`'s entrypoint uses) — this is safe since nothing else is listening on that port once it's dead. Full-page `agent-browser` screenshots also show large blank gaps below the fold because `.reveal` sections are opacity:0 until scrolled into view by an IntersectionObserver; scroll incrementally and screenshot each viewport instead of relying on one full-page capture.
 
 ## Current content reference
 
