@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MarketingDemo from "./pages/marketing-demo";
 import MarketingDemoES from "./pages/marketing-demo-es";
+import LawOffices from "./pages/law-offices";
 import DesignKitDemo from "./pages/_design";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -10,6 +11,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/_design" element={<DesignKitDemo />} />
+          <Route path="/law-offices" element={<LawOffices />} />
           <Route path="/es" element={<MarketingDemoES />} />
           <Route path="/" element={<MarketingDemo />} />
         </Routes>
