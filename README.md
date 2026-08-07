@@ -13,7 +13,7 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 - The design respects reduced-motion preferences and is responsive for mobile navigation, stacked sections, and touch-friendly controls. The busywork problem items use contrasting gradient cards with accent glows, staggered idle motion, and lift-on-hover interactions; reduced-motion preferences disable the idle animation.
 - **Scheduling**: The English and Spanish contact forms open the public Cal.com event at `https://cal.com/novixone/45min?user=novixone` inside a branded, responsive modal.
 - **Bilingual support**: The site includes both English (`/`) and US Spanish (`/es`) versions with language switcher in the header (EN/ES). The Spanish version uses optimized marketing copy tailored for Spanish-speaking audiences.
-- **Industry prototypes**: The site includes specialized landing page prototypes for targeted verticals (e.g., `/law-offices` for Miami law firms). These pages use the same Novix One visual system but with industry-specific copy, problem/solution framing, and value propositions.
+- **Industry-specific landing pages**: The site includes specialized landing page prototypes for targeted verticals (e.g., `/law-offices` for Miami law firms). The law-offices page adapts the elegant Novix One design for legal services with law firm-specific messaging about missed calls (1 in 3 calls unanswered), lead capture costs ($90K+/year), and confidentiality compliance (Florida Bar built-in). It features the Appointment & Messages Desk showcase, a 30-day paid pilot pricing model, and Cal.com scheduling for free intake audits.
 
 ## Architecture
 
@@ -22,7 +22,7 @@ This is a Zo Site using Bun + Hono + Vite + React. The runtime is managed by Zo;
 **Pages:**
 - `src/pages/marketing-demo.tsx` — English version (served at `/`)
 - `src/pages/marketing-demo-es.tsx` — US Spanish version (served at `/es`)
-- `src/pages/law-offices.tsx` — Law firm industry prototype (served at `/law-offices`)
+- `src/pages/law-offices.tsx` — Law firm landing page (served at `/law-offices`) — AI receptionist for Miami law firms with 24/7 call handling, English/Spanish bilingual support, calendar booking, and Florida Bar confidentiality compliance. Includes problem/solution messaging, cost of missed leads, process steps, FAQ, and 30-day pilot pricing model.
 
 **Styling & assets:**
 - Global design and responsive styles are in `src/styles.css`
