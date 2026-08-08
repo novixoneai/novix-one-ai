@@ -129,7 +129,7 @@ export default function MarketingDemoES() {
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <Reveal><p className="eyebrow"><span className="eyebrow-dot" />Sistemas de IA para negocios cansados del trabajo administrativo.</p></Reveal>
-          <Reveal delay={80}><h1>Deja de perder <em>clientes</em><br />por tareas administrativas.</h1></Reveal>
+          <Reveal delay={80}><h1>Deja de perder <em>clientes</em><br />por trabajo improductivo.</h1></Reveal>
           <Reveal delay={150}><p className="hero-intro">Contestamos tus llamadas, automatizamos la administración y creamos las herramientas digitales que tu negocio necesita, sin sumar otro proyecto a tu lista.</p></Reveal>
           <Reveal delay={220} className="hero-cta-row"><a className="button button-primary" href="#contact">Agenda tu evaluación gratuita <ArrowUpRight size={16} /></a><a className="text-link" href="#services">Descubre cómo podemos ayudarte <ArrowDownRight size={16} /></a></Reveal>
           <Reveal delay={290}><p className="hero-trust">Un sistema práctico. Menos trabajo. Más crecimiento.</p></Reveal>
