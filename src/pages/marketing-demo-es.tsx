@@ -96,6 +96,11 @@ export default function MarketingDemoES() {
     event.preventDefault();
     setSent(true);
     setBookingOpen(true);
+    fetch("https://jsos.zo.space/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...form, source: "novixone_contact_form_es" }),
+    }).catch(() => {});
   }
 
   function closeMenu() {
