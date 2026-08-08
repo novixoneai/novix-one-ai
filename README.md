@@ -38,6 +38,23 @@ This is a Zo Site using Bun + Hono + Vite + React. The runtime is managed by Zo;
 - Global design and responsive styles are in `src/styles.css`
 - Static assets live in `public/`
 
+## Deployment (Hostinger)
+
+The site is static-hosted on Hostinger at `novixone.co` (this Zo Site's own dev/prod servers are not what's live there). To deploy:
+
+```
+bun run deploy
+```
+
+That's it — one command. It runs `bash deploy.sh`, which type-checks, builds, uploads `dist/` to `/public_html/` over FTP, and verifies the live bundle hash matches the build. It only needs `NOVIXONE_HOSTINGER_PASSWORD` set as a secret in Settings > Advanced (the FTP host and username aren't sensitive, so they're hardcoded directly in `deploy.sh` — no more digging up hPanel screenshots for every deploy).
+
+`deploy.sh` also permanently fixes two bugs found the hard way:
+- `lftp -f <script>` does **not** expand `$VAR`-style environment variables from a script file (only `lftp -c "..."` inside a shell's own double quotes does, because the shell expands it first) — so the script builds the whole `lftp` command inline via `-c`.
+- lftp's `mirror` can compare files by size only and silently skip re-uploading `index.html` when the old and new versions happen to be the same byte size, even though the asset hashes it references changed — leaving the live site pointing at deleted JS/CSS. `deploy.sh` always force-`put`s `index.html` and `.htaccess` after the mirror to close that gap for good.
+- Hostinger's shared-IP FTP cert doesn't match the bare IP, so `ssl:verify-certificate` is explicitly disabled for this connection.
+
+See `HOSTINGER-DEPLOYMENT.md` for the manual File Manager fallback if FTP is ever unavailable.
+
 ## Development and verification
 
 - Zo automatically hot reloads the site during development.

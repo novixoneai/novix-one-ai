@@ -1,5 +1,7 @@
 # Hostinger deployment
 
+**Normal path: run `bun run deploy`** from the project root (see README.md's "Deployment (Hostinger)" section). It builds and uploads over FTP automatically, verified against the live site. The steps below are the manual File Manager fallback for if FTP is ever unavailable.
+
 ## Package
 
 Upload and extract `novix-one-hostinger-upload.zip` specifically inside `/public_html/`. The extracted `index.html` must be directly inside `/public_html/`—not inside a nested folder.
@@ -18,10 +20,6 @@ This is a static production build. It does not need Bun, Node.js, Hono, or a dat
 8. Remove or rename the old website files only after the new files are extracted. Keep the backup.
 9. Clear Hostinger/browser cache and open the domain in a private browser window.
 
-## Important limitation
+## Updating later (manual fallback only)
 
-The contact form currently displays a confirmation message in the browser, but it does not send submissions to email or save them to a database. The live site can be connected to a form backend later.
-
-## Updating later
-
-After changing the site, run `bun run build`, replace the contents of the Hostinger package with the new `dist/` contents, create a new ZIP with the same structure, and upload/extract it inside `/public_html/`.
+Prefer `bun run deploy`. If FTP is unavailable, run `bun run build`, copy `.htaccess` into `dist/` (not copied by the Vite build), zip `dist/`'s contents, and upload/extract it inside `/public_html/`, overwriting the old build.
