@@ -194,9 +194,9 @@ export default function MarketingDemoES() {
           <Reveal><div className="section-heading"><div><p className="section-number">03 / EL PROCESO, PASO A PASO</p><h2>De tu obstáculo a <em>un sistema funcionando.</em></h2></div><p className="section-lede">Empieza con un problema. Del resto nos encargamos nosotros.</p></div></Reveal>
           <div className="process-grid">
             {[
-              ['01', 'Cuéntanos qué te está frenando.', 'Una conversación gratuita para identificar dónde empezar con mayor impacto.'],
-              ['02', 'Construimos y lanzamos.', 'Nos encargamos de la configuración y te lo explicamos sin tecnicismos.'],
-              ['03', 'Recupera tu tiempo.', 'Tu sistema trabaja en segundo plano mientras tú te enfocas en tus clientes.'],
+              ['01', 'Cuéntanos qué te está frenando.', 'Una conversación gratuita para encontrar los cuellos de botella y el punto de mayor impacto para empezar.'],
+              ['02', 'Construimos, automatizamos y lo lanzamos.', 'Nos encargamos de la configuración, las conexiones y de que todo siga funcionando. Y te lo explicamos sin tecnicismos.'],
+              ['03', 'Recupera tu tiempo, reduce gastos y genera más ingresos.', 'Tu sistema trabaja en segundo plano mientras tú te enfocas en tus clientes.'],
             ].map(([number, title, body], index) => (
               <Reveal key={number} delay={index * 80}>
                 <article className={`process-card process-card-${index + 1}`}>
