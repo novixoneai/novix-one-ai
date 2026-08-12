@@ -25,7 +25,7 @@ const services = [
     tag: "VOZ / 01",
     number: "01",
     accent: "blue",
-    description: "Contestan llamadas 24/7, agendan citas, responden preguntas y captan cada prospecto.",
+    description: "Contestan llamadas 24/7, agendan citas, responden preguntas y captan cada prospecto. Llaman y califican a los prospectos, haciendo las preguntas correctas, con una voz cálida y humana.",
     bullets: ["Llamadas atendidas", "Citas agendadas", "Clientes captados"],
   },
   {
@@ -56,7 +56,7 @@ const services = [
     number: "04",
     accent: "champagne",
     description: "Atrae a los clientes correctos con un sitio web rápido, claro y optimizado para búsqueda.",
-    bullets: ["Posicionamiento claro", "Estructura lista para búsqueda", "Funciona en todos los dispositivos"],
+    bullets: ["Posicionamiento claro", "Estructura lista para búsqueda", "Funciona en todos los dispositivos", "Listo para SEO, GEO y AEO"],
   },
 ];
 
