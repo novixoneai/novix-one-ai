@@ -25,7 +25,7 @@ const services = [
     tag: "VOICE / 01",
     number: "01",
     accent: "blue",
-    description: "Answer calls 24/7, book appointments, answer questions, and capture every lead.",
+    description: "They answer calls 24/7, book appointments, answer questions, and capture every lead. Call and qualify leads, asking the right questions, with a warm, human-like voice.",
     bullets: ["Calls answered", "Appointments booked", "Leads captured"],
   },
   {
@@ -56,7 +56,7 @@ const services = [
     number: "04",
     accent: "champagne",
     description: "Bring in the right customers with a fast, clear, search-ready website.",
-    bullets: ["Clear positioning", "Search-ready structure", "Built for every screen"],
+    bullets: ["Clear positioning", "Search-ready structure", "Built for every screen", "SEO, GEO and AEO ready"],
   },
 ];
 
