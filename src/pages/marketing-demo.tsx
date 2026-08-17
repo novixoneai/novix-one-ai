@@ -128,7 +128,7 @@ export default function MarketingDemo() {
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />AI systems for businesses tired of busywork.</p></Reveal>
+          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />Get your time and revenue back.</p></Reveal>
           <Reveal delay={80}><h1>Stop losing <em>customers</em><br />to busywork.</h1></Reveal>
           <Reveal delay={150}><p className="hero-intro">We answer your calls, automate admin, and build the digital tools your business needs—without adding another tech project to your plate.</p></Reveal>
           <Reveal delay={220} className="hero-cta-row"><a className="button button-primary" href="#contact">Book a free evaluation <ArrowUpRight size={16} /></a><a className="text-link" href="#services">See how we help <ArrowDownRight size={16} /></a></Reveal>
