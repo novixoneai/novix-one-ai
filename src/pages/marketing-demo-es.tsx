@@ -128,7 +128,7 @@ export default function MarketingDemoES() {
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />Sistemas de IA para negocios cansados del trabajo administrativo.</p></Reveal>
+          <Reveal><p className="eyebrow"><span className="eyebrow-dot" />Recupera tu tiempo y tus ingresos.</p></Reveal>
           <Reveal delay={80}><h1>Deja de perder <em>clientes</em><br />por trabajo improductivo.</h1></Reveal>
           <Reveal delay={150}><p className="hero-intro">Contestamos tus llamadas, automatizamos la administración y creamos las herramientas digitales que tu negocio necesita, sin sumar otro proyecto a tu lista.</p></Reveal>
           <Reveal delay={220} className="hero-cta-row"><a className="button button-primary" href="#contact">Agenda tu evaluación gratuita <ArrowUpRight size={16} /></a><a className="text-link" href="#services">Descubre cómo podemos ayudarte <ArrowDownRight size={16} /></a></Reveal>
@@ -154,10 +154,10 @@ export default function MarketingDemoES() {
           <Reveal><div className="section-heading"><div><p className="section-number">01 / EL COSTO DEL TRABAJO ADMINISTRATIVO</p><h2>¿El trabajo administrativo te está costando <em>clientes</em>?</h2></div><p className="section-lede">Llamadas perdidas, seguimientos lentos y tareas repetitivas frenan tu crecimiento sin que lo notes.</p></div></Reveal>
           <div className="problem-list">
             {[
-              ["Las llamadas quedan sin contestar.", "Una llamada perdida suele ser un cliente perdido. La IA contesta, califica y agenda, incluso fuera de horario."],
-              ["Los prospectos esperan demasiado.", "La rapidez gana. Respondemos mientras el interés está alto y mantenemos a los prospectos en movimiento."],
-              ["Tu equipo repite el mismo trabajo.", "Automatizamos agendamiento, recordatorios, evaluaciones y seguimientos para que tu equipo se enfoque en los clientes."],
-              ["Los clientes no te encuentran.", "Un sitio web que no aparece en las búsquedas no sirve. Creamos sitios rápidos y optimizados que atraen a las personas correctas."],
+              ["Cada llamada perdida es dinero perdido.", "La mayoría de quienes llaman no dejan mensaje de voz — llaman a tu competencia. Nuestra IA contesta, califica y agenda, de día o de noche, para que una llamada perdida se convierta en un trabajo agendado."],
+              ["El seguimiento lento te cuesta ventas.", "Los prospectos contactados en los primeros minutos convierten mucho más que los que se persiguen horas después. Respondemos al instante, mientras el interés está caliente — y mantenemos al prospecto avanzando hacia la venta."],
+              ["Las tareas repetitivas se comen tu nómina.", "Cada hora que tu equipo dedica a agendar, recordar y registrar datos es una hora que pagas y que no hace crecer el negocio. La automatizamos para que tu gente se enfoque en clientes que pagan."],
+              ["Si los clientes no te encuentran, pagas por ser invisible.", "Un sitio que no aparece en búsquedas es presupuesto de marketing sin nada que mostrar. Creamos sitios rápidos y optimizados que atraen a las personas correctas — y que se pagan solos."],
             ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></article></Reveal>)}
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function MarketingDemoES() {
             {[
               ['01', 'Cuéntanos qué te está frenando.', 'Una conversación gratuita para encontrar los cuellos de botella y el punto de mayor impacto para empezar.'],
               ['02', 'Construimos, automatizamos y lo lanzamos.', 'Nos encargamos de la configuración, las conexiones y de que todo siga funcionando. Y te lo explicamos sin tecnicismos.'],
-              ['03', 'Recupera tu tiempo, reduce gastos y genera más ingresos.', 'Tu sistema trabaja en segundo plano mientras tú te enfocas en tus clientes.'],
+              ['03', 'Recupera tu tiempo, reduce tus costos y genera más ingresos.', 'Tu sistema trabaja en segundo plano — contestando, agendando y dando seguimiento — mientras tú te enfocas en tus clientes. La mayoría de nuestros clientes recuperan varias horas a la semana y dejan de perder prospectos en el primer mes.'],
             ].map(([number, title, body], index) => (
               <Reveal key={number} delay={index * 80}>
                 <article className={`process-card process-card-${index + 1}`}>
