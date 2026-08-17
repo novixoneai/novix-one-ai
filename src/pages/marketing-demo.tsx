@@ -196,7 +196,7 @@ export default function MarketingDemo() {
             {[
               ['01', 'Tell us what is slowing you down.', 'A free conversation to find the bottlenecks and the highest-value place to start.'],
               ['02', 'We build, automate and launch it.', 'We handle the setup, connections, and keep it running. And explain it without jargon.'],
-              ['03', 'Get your time back, cut spending, and generate more revenue.', 'Your system works in the background while you focus on customers.'],
+              ['03', 'Get your time back, cut your costs, and grow revenue.', 'Your system works in the background — answering, booking, and following up — while you focus on customers. Most clients reclaim several hours a week and stop losing leads within the first month.'],
             ].map(([number, title, body], index) => (
               <Reveal key={number} delay={index * 80}>
                 <article className={`process-card process-card-${index + 1}`}>
