@@ -154,10 +154,10 @@ export default function MarketingDemo() {
           <Reveal><div className="section-heading"><div><p className="section-number">01 / THE COST OF BUSYWORK</p><h2>Is busywork costing you <em>customers?</em></h2></div><p className="section-lede">Missed calls, slow follow-up, and repetitive admin quietly drain growth.</p></div></Reveal>
           <div className="problem-list">
             {[
-              ["Calls go unanswered.", "A missed call is often a missed customer. AI answers, qualifies, and books—even after hours."],
-              ["Leads wait too long.", "Fast follow-up wins. We respond while interest is high and keep prospects moving."],
-              ["Your team repeats the same work.", "Automate scheduling, reminders, intake, and follow-up so people can focus on clients."],
-              ["Customers cannot find you.", "A website that does not show up is not working. We build fast, search-ready sites that bring in the right people."],
+              ["Every missed call is money lost.", "Studies show most callers won't leave a voicemail — they call your competitor instead. Our AI answers, qualifies, and books, day or night, so a missed call becomes a booked job."],
+              ["Slow follow-up costs you deals.", "Leads contacted within 5 minutes convert far more often than those chased hours later. We respond instantly while interest is hot — and keep prospects moving toward a sale."],
+              ["Repetitive admin drains your payroll.", "Every hour your team spends on scheduling, reminders, and intake is an hour you're paying for that doesn't grow the business. We automate it so your people focus on paying clients."],
+              ["If customers can't find you, you're paying to be invisible.", "A site that doesn't rank is a marketing budget with nothing to show for it. We build fast, search-ready sites that bring in the right people — and pay for themselves."],
             ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></article></Reveal>)}
           </div>
         </div>
