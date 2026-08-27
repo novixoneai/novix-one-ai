@@ -233,6 +233,12 @@ export default function MarketingDemoES() {
         </div>
       </section>
 
+      <section className="pricing-section section-pad">
+        <div className="shell">
+          <Reveal><div className="pricing-content"><p className="section-number">PRECIOS</p><h2>Precios simples y <em>transparentes.</em></h2><p className="pricing-intro">Sin presupuestos sorpresa. La mayoría de nuestros clientes empiezan con un sistema enfocado — como contestar llamadas 24/7 y agendar citas — comenzando en los bajos $2K para construir, más una tarifa mensual plana para mantenerlo funcionando. Obtienes un número fijo antes de que comencemos. Y si las matemáticas no funcionan para tu negocio, te lo diremos.</p></div></Reveal>
+        </div>
+      </section>
+
       <section className="contact section-pad" id="contact">
         <div className="shell"><div className="contact-panel">
           <Reveal className="contact-copy"><p className="section-number">06 / COMIENZA AQUÍ</p><h2>Recupera tu <em>tiempo.</em></h2><p>Cuéntanos qué está frenando tu negocio. Te mostraremos dónde la IA puede ayudarte.</p><div className="contact-details"><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>

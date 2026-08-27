@@ -233,6 +233,12 @@ export default function MarketingDemo() {
         </div>
       </section>
 
+      <section className="pricing-section section-pad">
+        <div className="shell">
+          <Reveal><div className="pricing-content"><p className="section-number">PRICING</p><h2>Simple, upfront <em>pricing.</em></h2><p className="pricing-intro">No mystery quotes. Most clients start with a focused system — like 24/7 call answering and booking — starting in the low $2Ks to build, plus a flat monthly fee to keep it running. You get a fixed number before we start. And if the math doesn't work for your business, we'll tell you.</p></div></Reveal>
+        </div>
+      </section>
+
       <section className="contact section-pad" id="contact">
         <div className="shell"><div className="contact-panel">
           <Reveal className="contact-copy"><p className="section-number">06 / START HERE</p><h2>Get your <em>time back.</em></h2><p>Tell us what is slowing the business down. We will show you where AI can help.</p><div className="contact-details"><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>

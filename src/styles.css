@@ -207,6 +207,11 @@
 .reassurance-headline { max-width: 820px; margin-bottom: 28px; font-size: clamp(3rem, 5.1vw, 5.2rem); font-weight: 400; letter-spacing: -.01em; line-height: 1; text-wrap: balance; }
 .reassurance-headline br { display: none; }
 .reassurance-body { max-width: 720px; color: var(--muted); font-size: 20px; line-height: 1.78; letter-spacing: .005em; }
+.pricing-section { background: #061a30; border-top: 1px solid rgba(216,228,241,.14); border-bottom: 1px solid rgba(216,228,241,.14); }
+.pricing-content { max-width: 900px; }
+.pricing-content .section-number { margin-bottom: 18px; color: var(--champagne); }
+.pricing-content h2 { max-width: 820px; margin-bottom: 32px; font-size: clamp(2.8rem, 4.8vw, 4.8rem); font-weight: 400; letter-spacing: -.01em; line-height: 1; text-wrap: balance; }
+.pricing-intro { max-width: 720px; color: var(--muted); font-size: 18px; line-height: 1.75; letter-spacing: .005em; }
 @media (max-width: 820px) {
   .quote-block { grid-template-columns: 42px 1fr; gap: 16px; padding: 34px 0; }
   .quote-mark { font-size: 58px; }
