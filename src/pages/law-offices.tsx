@@ -11,6 +11,7 @@ import {
   Globe2,
   X,
 } from "lucide-react";
+import { setPageMetadata, generateLegalServiceSchema, generateBreadcrumbSchema } from "../lib/seo";
 
 const solutions = [
   {
@@ -63,6 +64,30 @@ export default function LawOffices() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSolution, setActiveSolution] = useState(0);
   const [bookingOpen, setBookingOpen] = useState(false);
+
+  useEffect(() => {
+    // Set page metadata and structured data for law offices page
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        generateLegalServiceSchema(),
+        generateBreadcrumbSchema([
+          { name: "Home", url: "https://novixone.co/" },
+          { name: "For Law Firms", url: "https://novixone.co/law-offices" }
+        ])
+      ]
+    };
+
+    setPageMetadata({
+      title: "AI Answering Service for Law Firms Miami | 24/7 Call Handling",
+      description: "Never miss another client call. AI answering service for Miami law firms. 24/7 availability, bilingual support, intake qualification, Florida Bar compliant.",
+      ogTitle: "AI Answering Service for Law Firms | Novix One",
+      ogDescription: "24/7 AI receptionist for law firms. Never miss a client call again. English and Spanish support.",
+      ogImage: "https://novixone.co/images/og-image.png",
+      canonicalUrl: "https://novixone.co/law-offices",
+      schema: schema
+    });
+  }, []);
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");

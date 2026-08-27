@@ -16,6 +16,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
+import { setPageMetadata, generateLocalBusinessSchema, generateServiceSchema, generateFAQSchema } from "../lib/seo";
 
 const services = [
   {
@@ -81,6 +82,31 @@ export default function MarketingDemoES() {
   const [sent, setSent] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", service: "Agentes de voz con IA" });
+
+  useEffect(() => {
+    // Set page metadata and structured data for Spanish version
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        generateLocalBusinessSchema({ "inLanguage": "es" }),
+        generateServiceSchema("Agentes de voz con IA", "Agentes de voz 24/7 que contestan llamadas, agendan citas y captan prospectos para tu negocio."),
+        generateServiceSchema("Automatización que ahorra tiempo", "Automatiza recordatorios, seguimientos, evaluaciones, agendamiento y entrada de datos."),
+        generateServiceSchema("Aplicaciones web personalizadas", "Portales de clientes, herramientas de reservas y paneles diseñados para tu flujo de trabajo."),
+        generateServiceSchema("Sitios web que atraen clientes", "Sitios web rápidos, claros y optimizados para búsqueda que traen clientes.",),
+        generateFAQSchema(faqs.map(([q, a]) => ({ question: q, answer: a })))
+      ]
+    };
+
+    setPageMetadata({
+      title: "Agencia de IA Miami | Agentes de Voz y Automatización para Negocios",
+      description: "Automatización de IA para negocios pequeños en Miami. Agentes de voz 24/7, reservas automáticas y automatización de flujos. Evaluación gratuita.",
+      ogTitle: "Agencia de Automatización AI Miami | Novix One",
+      ogDescription: "Agentes de voz y automatización para negocios pequeños. Nunca pierdas otra llamada de cliente.",
+      ogImage: "https://novixone.co/images/og-image.png",
+      canonicalUrl: "https://novixone.co/es/",
+      schema: schema
+    });
+  }, []);
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");

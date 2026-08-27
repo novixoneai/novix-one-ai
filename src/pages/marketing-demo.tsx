@@ -16,6 +16,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
+import { setPageMetadata, generateLocalBusinessSchema, generateServiceSchema, generateFAQSchema } from "../lib/seo";
 
 const services = [
   {
@@ -81,6 +82,31 @@ export default function MarketingDemo() {
   const [sent, setSent] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", service: "AI voice agents" });
+
+  useEffect(() => {
+    // Set page metadata and structured data
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        generateLocalBusinessSchema(),
+        generateServiceSchema("AI Voice Agents", "24/7 AI voice agents that answer calls, book appointments, and capture leads for your business."),
+        generateServiceSchema("Business Automation", "Automate reminders, follow-ups, intake, scheduling, and repetitive data entry."),
+        generateServiceSchema("Custom Web Apps", "Client portals, booking tools, and dashboards designed for your specific workflow."),
+        generateServiceSchema("Website Design & SEO", "Fast, search-ready websites that bring in customers and convert visitors."),
+        generateFAQSchema(faqs.map(([q, a]) => ({ question: q, answer: a })))
+      ]
+    };
+
+    setPageMetadata({
+      title: "AI Automation Agency Miami | Voice Agents & Business Automation",
+      description: "AI automation for Miami small businesses. 24/7 voice agents, appointment booking, and workflow automation. Get a free assessment.",
+      ogTitle: "AI Automation Agency Miami | Novix One",
+      ogDescription: "AI voice agents and automation solutions for small businesses. Never miss another customer call.",
+      ogImage: "https://novixone.co/images/og-image.png",
+      canonicalUrl: "https://novixone.co/",
+      schema: schema
+    });
+  }, []);
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
