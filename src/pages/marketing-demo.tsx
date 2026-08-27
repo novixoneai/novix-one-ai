@@ -92,6 +92,67 @@ export default function MarketingDemo() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    // Calculator logic
+    const calls = document.getElementById("nxcCalls") as HTMLInputElement;
+    const value = document.getElementById("nxcValue") as HTMLInputElement;
+    const rate = document.getElementById("nxcRate") as HTMLInputElement;
+
+    const callsVal = document.getElementById("nxcCallsVal");
+    const valueVal = document.getElementById("nxcValueVal");
+    const rateVal = document.getElementById("nxcRateVal");
+
+    const monthlyEl = document.getElementById("nxcMonthly");
+    const yearlyEl = document.getElementById("nxcYearly");
+    const recoverEl = document.getElementById("nxcRecover");
+
+    if (!calls || !value || !rate) return;
+
+    const RECOVERY = 0.9;
+    const WEEKS = 4.33;
+
+    // Build the client-value scale: $100–$10,000 by $100, then $15K/$20K/$25K/$30K.
+    const VALUES: number[] = [];
+    for (let i = 100; i <= 10000; i += 100) VALUES.push(i);
+    [15000, 20000, 25000, 30000].forEach((x) => VALUES.push(x));
+
+    function money(n: number) {
+      return "$" + Math.round(n).toLocaleString("en-US");
+    }
+
+    function paint(el: HTMLInputElement) {
+      const p = ((Number(el.value) - Number(el.min)) / (Number(el.max) - Number(el.min))) * 100;
+      el.style.backgroundSize = p + "% 100%";
+    }
+
+    function update() {
+      const c = Number(calls.value);
+      const v = VALUES[Number(value.value)];
+      const r = Number(rate.value) / 100;
+
+      if (callsVal) callsVal.textContent = String(c);
+      if (valueVal) valueVal.textContent = money(v);
+      if (rateVal) rateVal.textContent = rate.value + "%";
+
+      const monthly = c * WEEKS * r * v;
+      const yearly = monthly * 12;
+      const recover = monthly * RECOVERY;
+
+      if (monthlyEl) monthlyEl.textContent = money(monthly);
+      if (yearlyEl) yearlyEl.textContent = money(yearly);
+      if (recoverEl) recoverEl.textContent = money(recover) + " / mo";
+
+      [calls, value, rate].forEach(paint);
+    }
+
+    [calls, value, rate].forEach((el) => el.addEventListener("input", update));
+    update();
+
+    return () => {
+      [calls, value, rate].forEach((el) => el.removeEventListener("input", update));
+    };
+  }, []);
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSent(true);
@@ -160,6 +221,66 @@ export default function MarketingDemo() {
               ["If customers can't find you, you're paying to be invisible.", "A site that doesn't rank is a marketing budget with nothing to show for it. We build fast, search-ready sites that bring in the right people — and pay for themselves."],
             ].map(([title, body], index) => <Reveal key={title} delay={index * 55}><article className="problem-item"><span className="problem-number">0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></article></Reveal>)}
           </div>
+        </div>
+      </section>
+
+      <section className="calculator-section section-pad">
+        <div className="shell">
+          <Reveal>
+            <div className="nxcalc">
+              <span className="nxcalc__badge">Free tool · Novix One</span>
+              <h2 className="nxcalc__h1">How much are missed calls <span>costing your firm?</span></h2>
+              <p className="nxcalc__sub">Most callers won't leave a voicemail — they call the next firm on the list. Move the sliders to see the revenue slipping away, and what a 24/7 AI could recover.</p>
+              <div className="nxcalc__grid">
+                {/* Inputs */}
+                <div className="nxcalc__card">
+                  <h3 className="nxcalc__ct">Your numbers</h3>
+                  <div className="nxcalc__field">
+                    <label>
+                      Calls you miss per week <span className="nxcalc__val" id="nxcCallsVal">5</span>
+                    </label>
+                    <input type="range" id="nxcCalls" min="1" max="50" defaultValue="5" />
+                    <div className="nxcalc__hint">After-hours, busy signals, voicemails — anyone who didn't reach a person.</div>
+                  </div>
+                  <div className="nxcalc__field">
+                    <label>
+                      Value of one new client <span className="nxcalc__val" id="nxcValueVal">$5,000</span>
+                    </label>
+                    <input type="range" id="nxcValue" min="0" max="103" step="1" defaultValue="49" />
+                    <div className="nxcalc__hint">Average revenue from a new case or client. Caps at $30,000.</div>
+                  </div>
+                  <div className="nxcalc__field">
+                    <label>
+                      Of those callers, share who'd become clients <span className="nxcalc__val" id="nxcRateVal">30%</span>
+                    </label>
+                    <input type="range" id="nxcRate" min="5" max="80" step="5" defaultValue="30" />
+                    <div className="nxcalc__hint">A conservative estimate of how many were real prospects.</div>
+                  </div>
+                </div>
+                {/* Results */}
+                <div className="nxcalc__card nxcalc__result">
+                  <h3 className="nxcalc__ct">What it's costing you</h3>
+                  <div className="nxcalc__lossrow">
+                    <span className="nxcalc__k">Lost revenue per month</span>
+                    <span className="nxcalc__big" id="nxcMonthly">$32,475</span>
+                  </div>
+                  <div className="nxcalc__lossrow">
+                    <span className="nxcalc__k">Lost revenue per year</span>
+                    <span className="nxcalc__big nxcalc__year" id="nxcYearly">$389,700</span>
+                  </div>
+                  <div className="nxcalc__divider" />
+                  <div className="nxcalc__recover">
+                    <div className="nxcalc__k2">Recoverable with 24/7 answering</div>
+                    <div className="nxcalc__v" id="nxcRecover">$29,228 / mo</div>
+                    <div className="nxcalc__note">Assuming AI answers and books ~90% of the calls you currently miss.</div>
+                  </div>
+                  <a className="nxcalc__btn" href="#contact">Get your free assessment →</a>
+                </div>
+              </div>
+              <p className="nxcalc__assume">Estimates only, based on the numbers you enter (4.33 weeks per month). Your real figures come out of a free assessment.</p>
+              <p className="nxcalc__foot"><strong>Novix One</strong> — AI that finally feels like it's on your side.</p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
