@@ -228,7 +228,6 @@ export default function MarketingDemoES() {
         <div className="shell">
           <Reveal>
             <div className="nxcalc">
-              <span className="nxcalc__badge">Herramienta gratuita · Novix One</span>
               <h2 className="nxcalc__h1">¿Cuánto te están cobrando las llamadas perdidas? <span>Descúbrelo aquí.</span></h2>
               <p className="nxcalc__sub">La mayoría de quienes llaman no dejan mensaje — llaman a tu competencia. Desliza los valores para ver el ingreso que se escapa, y lo que la IA 24/7 podría recuperar.</p>
               <div className="nxcalc__grid">
@@ -278,7 +277,6 @@ export default function MarketingDemoES() {
                 </div>
               </div>
               <p className="nxcalc__assume">Solo estimaciones, basadas en los números que ingresas (4.33 semanas por mes). Tus números reales los veremos en la evaluación gratuita.</p>
-              <p className="nxcalc__foot"><strong>Novix One</strong> — IA que finalmente está de tu lado.</p>
             </div>
           </Reveal>
         </div>

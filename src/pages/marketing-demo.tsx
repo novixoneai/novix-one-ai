@@ -228,7 +228,6 @@ export default function MarketingDemo() {
         <div className="shell">
           <Reveal>
             <div className="nxcalc">
-              <span className="nxcalc__badge">Free tool · Novix One</span>
               <h2 className="nxcalc__h1">How much are missed calls <span>costing your firm?</span></h2>
               <p className="nxcalc__sub">Most callers won't leave a voicemail — they call the next firm on the list. Move the sliders to see the revenue slipping away, and what a 24/7 AI could recover.</p>
               <div className="nxcalc__grid">
@@ -278,7 +277,6 @@ export default function MarketingDemo() {
                 </div>
               </div>
               <p className="nxcalc__assume">Estimates only, based on the numbers you enter (4.33 weeks per month). Your real figures come out of a free assessment.</p>
-              <p className="nxcalc__foot"><strong>Novix One</strong> — AI that finally feels like it's on your side.</p>
             </div>
           </Reveal>
         </div>
