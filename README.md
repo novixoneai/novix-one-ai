@@ -16,6 +16,37 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 - **Bilingual support**: The site includes both English (`/`) and US Spanish (`/es`) versions with language switcher in the header (EN/ES). The Spanish version uses optimized marketing copy tailored for Spanish-speaking audiences.
 - **Industry-specific landing pages**: The site includes specialized landing page prototypes for targeted verticals (e.g., `/law-offices` for Miami law firms). Rather than a custom visual system, this page is built entirely from the homepage's shared global classes (`novix-site`, `hero`, `problem`, `services`/`service-tab`/`service-feature`, `why-section`, `stats-row`, `proof-card`, `booking-modal`, `site-footer`) defined in `src/styles.css`, so any future page for a new vertical should follow the same pattern: reuse the shared classes and only add small scoped `<style>` blocks (like `.cost-section`/`.cost-card` on this page) for layout pieces that don't already exist. Content covers the missed-call problem (1 in 3 unanswered, $90K/year lost), the AI receptionist solution (reusing the homepage's interactive service-tab/service-feature component), and the Appointment & Messages Desk (embedding the actual product screenshot at `public/images/appointment-desk.png`, not a stock photo). CTAs open the same Cal.com booking modal as the homepage.
 
+## SEO Implementation
+
+**Search Engine Discovery:**
+- `public/robots.txt`: Directs search engine crawlers; includes sitemap reference
+- `public/sitemap.xml`: XML sitemap with all public pages (homepage EN/ES, law-offices)
+- Hreflang tags in `index.html` for language alternates (English/Spanish)
+
+**Dynamic Metadata (2026-08-27):**
+- `src/lib/seo.ts`: Centralized utility for managing page-level metadata and structured data
+- Each page (`marketing-demo.tsx`, `marketing-demo-es.tsx`, `law-offices.tsx`) imports and calls `setPageMetadata()` in a `useEffect` to set:
+  - Page title (keyword-optimized for each page)
+  - Meta description (with target keywords and clear value proposition)
+  - Open Graph tags (og:title, og:description, og:image, og:url)
+  - Canonical URLs
+  - JSON-LD structured data
+
+**Structured Data (JSON-LD):**
+- **LocalBusiness schema**: Company name, phone, email, Miami address, service area
+- **Service schemas**: Individual schemas for each service offering (AI voice agents, automation, custom apps, websites)
+- **FAQPage schema**: Auto-generated from the site's FAQ section
+- **LegalService schema**: Specialized for the law-offices landing page
+- **BreadcrumbList schema**: Navigation hierarchy for law-offices page
+
+**Page Metadata:**
+- Homepage (`/`): "AI Automation Agency Miami | Voice Agents & Business Automation" — keyword-first title with geo modifier and primary service
+- Spanish (`/es`): "Agencia de IA Miami | Agentes de Voz y Automatización para Negocios" — Spanish-language variant
+- Law Offices (`/law-offices`): "AI Answering Service for Law Firms Miami | 24/7 Call Handling" — vertical-specific keyword targeting
+
+**How to maintain:**
+When adding new pages or updating content, import the SEO utility and add metadata setup in the component's useEffect. See existing pages for patterns.
+
 ## Lead capture
 
 The English (`marketing-demo.tsx`) and Spanish (`marketing-demo-es.tsx`) contact forms POST to `https://jsos.zo.space/api/leads` on submit (fire-and-forget, `.catch(() => {})` — a failed request never blocks the Cal.com booking modal). That endpoint is a **Zo Space API route** (`/api/leads` on `jsos.zo.space`, source in this project's owner's Zo Space, not in this repo) that opens `novix-crm`'s SQLite file directly at `/home/workspace/novix-crm/novix-crm.sqlite` and inserts a customer at the `new_lead` stage — same insert path as `novix-crm`'s own `POST /api/customers`, plus an initial note noting the selected service. `law-offices.tsx` has no lead form of its own (it opens the Cal.com modal directly), so it isn't wired to this endpoint.
