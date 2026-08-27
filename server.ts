@@ -66,7 +66,8 @@ function configureProduction(app: Hono) {
 /**
  * Configure routing for development builds.
  *
- * - Boots Vite in middleware mode for transforms.
+ * - Boots Vite in middleware mode for transforms with file watching enabled.
+ * - File changes invalidate the module cache so fresh code is always served.
  * - Static files from `public/` are served at root paths (matching Vite convention).
  * - Mirrors production routing semantics so SPA routes behave consistently.
  */
@@ -74,12 +75,6 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
   const vite = await createViteServer({
     server: {
       middlewareMode: true,
-      hmr: {
-        protocol: "ws",
-        host: "localhost",
-        port: config.local_port,
-      },
-      ws: true,
     },
     appType: "custom",
   });
@@ -94,7 +89,11 @@ async function configureDevelopment(app: Hono): Promise<ViteDevServer> {
         let template = await Bun.file("./index.html").text();
         template = await vite.transformIndexHtml(url, template);
         return c.html(template, {
-          headers: { "Cache-Control": "no-store, must-revalidate" },
+          headers: {
+            "Cache-Control": "no-store, must-revalidate, no-cache, max-age=0",
+            "Pragma": "no-cache",
+            "Expires": "0",
+          },
         });
       }
 
