@@ -60,11 +60,11 @@ See `HOSTINGER-DEPLOYMENT.md` for the manual File Manager fallback if FTP is eve
 
 ## Development and verification
 
-- Zo automatically hot reloads the site during development.
+- Zo automatically hot reloads the site during development. Updates to page files, styles, and scripts appear immediately in the browser (HMR is enabled in `server.ts`).
 - Type check with `bunx tsc --noEmit`.
 - Build with `bun run build` when validating production output.
 - Use `agent-browser` against the managed preview port for visual and interaction checks. Do not expose localhost URLs to visitors.
-- **Caveat**: `server.ts`'s Vite dev instance is created with `hmr: false, ws: false`, so edits to page files sometimes are not picked up by the running dev server (confirmed via `curl`ing the raw transformed module and seeing stale content). If a page edit isn't reflecting after a normal wait, find the dev process with `lsof -i :<local_port>`, `kill` it, and if the external supervisor doesn't respawn it within ~60-90s, restart it directly with `bun run dev` from the project root (the same command `zosite.json`'s entrypoint uses) — this is safe since nothing else is listening on that port once it's dead. Full-page `agent-browser` screenshots also show large blank gaps below the fold because `.reveal` sections are opacity:0 until scrolled into view by an IntersectionObserver; scroll incrementally and screenshot each viewport instead of relying on one full-page capture.
+- Full-page `agent-browser` screenshots may show blank gaps below the fold because `.reveal` sections are opacity:0 until scrolled into view by an IntersectionObserver; scroll incrementally and screenshot each viewport instead.
 
 ## Current content reference
 
