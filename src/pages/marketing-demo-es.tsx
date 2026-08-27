@@ -239,6 +239,12 @@ export default function MarketingDemoES() {
         </div>
       </section>
 
+      <section className="trust-section section-pad">
+        <div className="shell">
+          <Reveal><div className="trust-content"><h2>La información de tus clientes se mantiene <em>protegida.</em></h2><p className="trust-body">Entregarle tus llamadas e intake a la IA solo funciona si es seguro — así que lo construimos de esa manera. Los datos están encriptados y controlados de acceso, y cada llamante es informado de antemano de que está hablando con un asistente de IA. Para campos regulados como derecho y contabilidad, los detalles sensibles se manejan de forma segura y una persona de tu equipo revisa cada prospecto calificado antes de que algo avance. La confianza no es una característica que agregamos después. Es donde comenzamos.</p></div></Reveal>
+        </div>
+      </section>
+
       <section className="contact section-pad" id="contact">
         <div className="shell"><div className="contact-panel">
           <Reveal className="contact-copy"><p className="section-number">06 / COMIENZA AQUÍ</p><h2>Recupera tu <em>tiempo.</em></h2><p>Cuéntanos qué está frenando tu negocio. Te mostraremos dónde la IA puede ayudarte.</p><div className="contact-details"><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>

@@ -239,6 +239,12 @@ export default function MarketingDemo() {
         </div>
       </section>
 
+      <section className="trust-section section-pad">
+        <div className="shell">
+          <Reveal><div className="trust-content"><h2>Your customers' information stays <em>protected.</em></h2><p className="trust-body">Handing your calls and intake to AI only works if it's safe — so we built it that way. Data is encrypted and access-controlled, and every caller is told upfront they're speaking with an AI assistant. For regulated fields like law and accounting, sensitive details are handled securely and a person on your team reviews every qualified lead before anything moves forward. Trust isn't a feature we added later. It's where we start.</p></div></Reveal>
+        </div>
+      </section>
+
       <section className="contact section-pad" id="contact">
         <div className="shell"><div className="contact-panel">
           <Reveal className="contact-copy"><p className="section-number">06 / START HERE</p><h2>Get your <em>time back.</em></h2><p>Tell us what is slowing the business down. We will show you where AI can help.</p><div className="contact-details"><a href="tel:+18333250830"><PhoneCall size={15} />833-325-0830</a></div></Reveal>
