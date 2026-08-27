@@ -360,7 +360,7 @@ export default function MarketingDemo() {
 
       <section className="trust-section section-pad">
         <div className="shell">
-          <Reveal><div className="trust-content"><h2>Your customers' information stays <em>protected.</em></h2><p className="trust-body">Handing your calls and intake to AI only works if it's safe — so we built it that way. Data is encrypted and access-controlled, and every caller is told upfront they're speaking with an AI assistant. For regulated fields like law and accounting, sensitive details are handled securely and a person on your team reviews every qualified lead before anything moves forward. Trust isn't a feature we added later. It's where we start.</p></div></Reveal>
+          <Reveal><div className="trust-content"><h2>Your customers' information stays <em>protected.</em></h2><p className="trust-body">Handing your calls and intake to AI only works if it's safe — so we built it that way. Data is encrypted and access-controlled. For regulated fields like law and accounting, sensitive details are handled securely and a person on your team reviews every qualified lead before anything moves forward. Trust isn't a feature we added later. It's where we start.</p></div></Reveal>
         </div>
       </section>
 

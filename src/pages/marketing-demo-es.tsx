@@ -360,7 +360,7 @@ export default function MarketingDemoES() {
 
       <section className="trust-section section-pad">
         <div className="shell">
-          <Reveal><div className="trust-content"><h2>La información de tus clientes se mantiene <em>protegida.</em></h2><p className="trust-body">Entregarle tus llamadas e intake a la IA solo funciona si es seguro — así que lo construimos de esa manera. Los datos están encriptados y controlados de acceso, y cada llamante es informado de antemano de que está hablando con un asistente de IA. Para campos regulados como derecho y contabilidad, los detalles sensibles se manejan de forma segura y una persona de tu equipo revisa cada prospecto calificado antes de que algo avance. La confianza no es una característica que agregamos después. Es donde comenzamos.</p></div></Reveal>
+          <Reveal><div className="trust-content"><h2>La información de tus clientes se mantiene <em>protegida.</em></h2><p className="trust-body">Entregarle tus llamadas e intake a la IA solo funciona si es seguro — así que lo construimos de esa manera. Los datos están encriptados y controlados de acceso. Para campos regulados como derecho y contabilidad, los detalles sensibles se manejan de forma segura y una persona de tu equipo revisa cada prospecto calificado antes de que algo avance. La confianza no es una característica que agregamos después. Es donde comenzamos.</p></div></Reveal>
         </div>
       </section>
 
