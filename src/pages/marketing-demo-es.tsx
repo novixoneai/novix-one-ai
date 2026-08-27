@@ -163,6 +163,13 @@ export default function MarketingDemoES() {
         </div>
       </section>
 
+      <section className="reassurance section-pad">
+        <div className="shell">
+          <Reveal><h2 className="reassurance-headline">Tu equipo se queda.<br />El trabajo administrativo se va.</h2></Reveal>
+          <Reveal delay={80}><p className="reassurance-body">La automatización no debe costarle el trabajo a nadie. Nuestra IA se encarga de las llamadas después de horas, los recordatorios y la entrada de datos — para que tu gente dedique su tiempo a los clientes y al trabajo que realmente necesita una persona. No estamos reemplazando a tu equipo. Les estamos devolviendo su tiempo.</p></Reveal>
+        </div>
+      </section>
+
       <section className="services section-pad" id="services">
         <div className="shell">
           <Reveal><div className="section-heading"><div><p className="section-number">02 / SOLUCIONES</p><h2>El trabajo que te quitamos <em>de encima.</em></h2></div><p className="section-lede">Sistemas de IA prácticos y herramientas digitales diseñados para tu negocio.</p></div></Reveal>

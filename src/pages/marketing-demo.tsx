@@ -163,6 +163,13 @@ export default function MarketingDemo() {
         </div>
       </section>
 
+      <section className="reassurance section-pad">
+        <div className="shell">
+          <Reveal><h2 className="reassurance-headline">Your team stays.<br />The busywork goes.</h2></Reveal>
+          <Reveal delay={80}><p className="reassurance-body">Automation shouldn't cost anyone their job. Our AI takes the after-hours calls, the reminders, and the data entry off your team's plate — so your people spend their hours on customers and the work that actually needs a human. You're not replacing your crew. You're giving them their time back.</p></Reveal>
+        </div>
+      </section>
+
       <section className="services section-pad" id="services">
         <div className="shell">
           <Reveal><div className="section-heading"><div><p className="section-number">02 / SOLUTIONS</p><h2>The work we take <em>off your plate.</em></h2></div><p className="section-lede">Practical AI and digital systems built around how your business runs.</p></div></Reveal>
