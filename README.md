@@ -47,6 +47,36 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 **How to maintain:**
 When adding new pages or updating content, import the SEO utility and add metadata setup in the component's useEffect. See existing pages for patterns.
 
+## Blog Posts (2026-08-28)
+
+The site now includes three SEO-optimized, humanized blog posts visually integrated with the site's design system:
+
+**Blog Post Pages:**
+- `src/pages/blog/missed-calls-cost.tsx` — "How to Calculate the Cost of Missed Calls for Your Business" (2,500+ words, target keyword: cost of missed calls)
+- `src/pages/blog/ai-vs-virtual-assistant.tsx` — "Why AI Answering Services Beat Virtual Assistants" (2,800+ words, target keyword: AI vs. virtual assistant)
+- `src/pages/blog/law-firm-phone-answering.tsx` — "Law Firm Phone Answering: AI vs. Human Receptionists" (3,100+ words, target keyword: law firm answering service)
+
+**Design & Styling (Frontend-Design Skill):**
+- All blog posts use the site's unified design system: dark navy background (#0d2c4e), Libre Baskerville display headings, DM Sans body copy
+- Consistent color palette: ice-blue accents (#9bc8ed), aqua highlights (#86d5d0), champagne callouts (#e4c994), muted text (#c9d3df)
+- Styled header section for each post with metadata tags (category, read time) and refined typography hierarchy
+- Content sections separated by subtle borders, maintaining the site's editorial aesthetic
+- Lists and key callouts styled with background gradients and accent colors for visual hierarchy
+- CTA buttons at post end use gradient backgrounds and link to `/#book` (home page contact form)
+- All posts were humanized using the Humanizer skill to replace formal structures with conversational language while retaining all SEO keywords
+
+**Routing & Integration:**
+- Routes registered in `src/App.tsx` for client-side navigation (`/blog/missed-calls-cost`, `/blog/ai-vs-virtual-assistant`, `/blog/law-firm-phone-answering`)
+- All three posts included in `/public/sitemap.xml` for search engine crawling
+- Internal links throughout posts direct readers back to homepage CTAs
+- Deployed live to https://novixone.co/blog/* on 2026-08-28
+
+**Expected SEO Timeline:**
+- Week 1-2: Google crawls and indexes blog posts
+- Week 3-4: Posts appear in Google Search Console search analytics
+- Week 4-8: Long-tail keyword rankings begin (e.g., "how to calculate cost of missed calls")
+- Month 2-3: Potential page 1 rankings for informational keywords as backlinks accumulate
+
 ## Lead capture
 
 The English (`marketing-demo.tsx`) and Spanish (`marketing-demo-es.tsx`) contact forms POST to `https://jsos.zo.space/api/leads` on submit (fire-and-forget, `.catch(() => {})` — a failed request never blocks the Cal.com booking modal). That endpoint is a **Zo Space API route** (`/api/leads` on `jsos.zo.space`, source in this project's owner's Zo Space, not in this repo) that opens `novix-crm`'s SQLite file directly at `/home/workspace/novix-crm/novix-crm.sqlite` and inserts a customer at the `new_lead` stage — same insert path as `novix-crm`'s own `POST /api/customers`, plus an initial note noting the selected service. `law-offices.tsx` has no lead form of its own (it opens the Cal.com modal directly), so it isn't wired to this endpoint.
