@@ -254,7 +254,7 @@ export default function MarketingDemoES() {
         <div className="shell">
           <Reveal>
             <div className="nxcalc">
-              <h2 className="nxcalc__h1">¿Cuánto te están cobrando las llamadas perdidas? <span>Descúbrelo aquí.</span></h2>
+              <h2 className="nxcalc__h1">¿Cuánto te están costando las llamadas perdidas? <span>Descúbrelo aquí.</span></h2>
               <p className="nxcalc__sub">La mayoría de quienes llaman no dejan mensaje — llaman a tu competencia. Desliza los valores para ver el ingreso que se escapa, y lo que la IA 24/7 podría recuperar.</p>
               <div className="nxcalc__grid">
                 {/* Inputs */}
