@@ -6,6 +6,10 @@
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
 
+  # Don't rewrite robots.txt and sitemap.xml
+  RewriteCond %{REQUEST_FILENAME} !robots.txt
+  RewriteCond %{REQUEST_FILENAME} !sitemap.xml
+
   # Rewrite all requests to index.html for SPA routing
   RewriteRule ^ index.html [QSA,L]
 </IfModule>
