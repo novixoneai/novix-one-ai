@@ -265,7 +265,7 @@ export default function MarketingDemo() {
                       Calls you miss per week <span className="nxcalc__val" id="nxcCallsVal">5</span>
                     </label>
                     <input type="range" id="nxcCalls" min="1" max="50" defaultValue="5" />
-                    <div className="nxcalc__hint">After-hours, busy signals, voicemails — anyone who didn't reach a person.</div>
+                    <div className="nxcalc__hint">After-hours, busy signals, voicemail, "press 1" menus — anyone who gave up before reaching a person.</div>
                   </div>
                   <div className="nxcalc__field">
                     <label>
