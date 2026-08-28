@@ -265,7 +265,7 @@ export default function MarketingDemoES() {
                       Llamadas perdidas a la semana <span className="nxcalc__val" id="nxcCallsVal">5</span>
                     </label>
                     <input type="range" id="nxcCalls" min="1" max="50" defaultValue="5" />
-                    <div className="nxcalc__hint">Después de horas, señales ocupadas, buzones de voz, menús "presiona 1" — cualquiera que se rindió antes de alcanzar una persona.</div>
+                    <div className="nxcalc__hint">Fuera del horario de oficina, señales ocupadas, buzones de voz, menús "presiona 1" — cualquiera que se rindió antes de alcanzar una persona.</div>
                   </div>
                   <div className="nxcalc__field">
                     <label>
