@@ -292,7 +292,7 @@ export default function AIvsVirtualAssistant() {
             <h2 className="blog-h2" style={{ marginTop: 0 }}>Ready to make the switch?</h2>
             <div className="space-y-4">
               <p>
-                <a href="/#book" className="blog-cta">
+                <a href="/#contact" className="blog-cta">
                   Get a free AI answering service assessment →
                 </a>
               </p>

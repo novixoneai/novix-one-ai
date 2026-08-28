@@ -332,7 +332,7 @@ export default function LawFirmPhoneAnswering() {
             <h2 className="blog-h2">Ready to capture those missed leads?</h2>
             <div className="space-y-4">
               <p>
-                <a href="/#book" className="blog-cta">
+                <a href="/#contact" className="blog-cta">
                   Get a free AI answering service assessment for your law practice →
                 </a>
               </p>
