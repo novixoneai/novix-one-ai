@@ -61,7 +61,7 @@ export default function LawFirmPhoneAnswering() {
             <p>
               Law firms get calls that need immediate attention:
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li><strong>Emergencies:</strong> "I was just in an accident. I need a lawyer NOW."</li>
               <li><strong>Time-sensitive matters:</strong> "My court date is Friday. I need to file something today."</li>
               <li><strong>High-value leads:</strong> Personal injury cases ($20,000-$500,000+), contract disputes, real estate deals</li>
@@ -73,7 +73,7 @@ export default function LawFirmPhoneAnswering() {
             <h3 className="blog-h3">Where Human Receptionists Fail</h3>
 
             <p><strong>Scenario 1: Lunch Break (Noon-1pm)</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Your receptionist is at lunch</li>
               <li>Phone rings with a new personal injury client</li>
               <li>Goes to voicemail</li>
@@ -82,7 +82,7 @@ export default function LawFirmPhoneAnswering() {
             </ul>
 
             <p className="mt-4"><strong>Scenario 2: End of Business Day (5:15pm)</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Your receptionist left at 5pm</li>
               <li>Client calls with an urgent question about their case</li>
               <li>"The office is closed, but leave a message"</li>
@@ -91,7 +91,7 @@ export default function LawFirmPhoneAnswering() {
             </ul>
 
             <p className="mt-4"><strong>Scenario 3: After Hours (8pm)</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>DUI arrest</li>
               <li>Personal injury from a car accident</li>
               <li>Divorce emergency</li>
@@ -101,7 +101,7 @@ export default function LawFirmPhoneAnswering() {
             </ul>
 
             <p className="mt-4"><strong>Scenario 4: Weekend Emergency</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Construction accident on Saturday</li>
               <li>No receptionist on duty</li>
               <li>Voicemail only</li>
@@ -111,7 +111,7 @@ export default function LawFirmPhoneAnswering() {
 
             <h3 className="blog-h3">The Cost Per Missed Call</h3>
             <p><strong>Personal injury firm in Miami:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Average case value: $50,000</li>
               <li>Conversion rate from leads: 20%</li>
               <li>1 missed call = lost $10,000 in expected revenue</li>
@@ -119,7 +119,7 @@ export default function LawFirmPhoneAnswering() {
             <p>
               <strong>Miss just 3-5 calls per week?</strong>
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>That's $30,000-50,000 per week in lost revenue</li>
               <li><strong>$1.5M - $2.5M per year</strong></li>
             </ul>
@@ -133,14 +133,14 @@ export default function LawFirmPhoneAnswering() {
 
             <h3 className="blog-h3">The Hidden Costs of Full-Time Receptionists</h3>
             <p><strong>Direct costs:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Salary: $35,000-50,000/year</li>
               <li>Benefits (health, taxes): $8,000-15,000/year</li>
               <li>Software (phone system, CRM): $2,000-5,000/year</li>
               <li className="font-bold">Total: $45,000-70,000/year</li>
             </ul>
             <p><strong>Indirect costs:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Training and onboarding: 2-4 weeks</li>
               <li>Time away from desk for breaks: 1-2 hours/day</li>
               <li>Turnover (hiring replacement): $5,000-10,000 per turnover</li>
@@ -190,7 +190,7 @@ export default function LawFirmPhoneAnswering() {
             <p>
               An AI system designed for law offices:
             </p>
-            <ol className="list-inside space-y-2">
+            <ol className="list-inside space-y-4">
               <li><strong>Answers every call, 24/7/365</strong> — No lunch breaks, no weekends off. Emergency calls answered at 2am.</li>
               <li><strong>Qualifies leads intelligently</strong> — Asks about case type, urgency, damages. Gathers client information automatically. Routes to the right attorney/practice area.</li>
               <li><strong>Books appointments</strong> — Checks your calendar. Schedules directly (no back-and-forth). Sends confirmation to client + attorney.</li>
@@ -200,7 +200,7 @@ export default function LawFirmPhoneAnswering() {
 
             <h3 className="blog-h3">The AI Answering Service Cost for Law Firms</h3>
             <p><strong>Monthly cost:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Base service: $300-600/month</li>
               <li>No setup costs</li>
               <li>No training needed</li>
@@ -216,7 +216,7 @@ export default function LawFirmPhoneAnswering() {
             <h3 className="blog-h3">AI Advantages for Law Offices</h3>
 
             <p><strong>Advantage 1: Never Misses a Call</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Emergency at 2am? Answered.</li>
               <li>Holiday weekend? Answered.</li>
               <li>Lunch hour? Answered.</li>
@@ -227,7 +227,7 @@ export default function LawFirmPhoneAnswering() {
             <p>
               AI asks specific questions:
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>What type of case? (personal injury, family law, real estate)</li>
               <li>What happened? (car accident, workplace injury, divorce)</li>
               <li>When did it happen? (same day = urgent)</li>
@@ -248,7 +248,7 @@ export default function LawFirmPhoneAnswering() {
             </p>
 
             <p className="mt-4"><strong>Advantage 5: Scalability Without Headcount</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Open a second location? Just add a phone number.</li>
               <li>Expand practice areas? Configure the AI.</li>
               <li>Add language support (Spanish is huge in Miami)? Flip a switch.</li>
@@ -256,7 +256,7 @@ export default function LawFirmPhoneAnswering() {
             </ul>
 
             <p className="mt-4"><strong>Advantage 6: Compliance & Documentation</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>HIPAA-compliant options available</li>
               <li>Call recordings for quality/compliance</li>
               <li>Audit trail for every interaction</li>
@@ -275,21 +275,21 @@ export default function LawFirmPhoneAnswering() {
 
             <h3 className="blog-h3">Example: Personal Injury Firm</h3>
             <p><strong>Current situation:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>1 full-time receptionist ($50,000/year)</li>
               <li>Open 9am-5pm Mon-Fri</li>
               <li>After-hours calls go to voicemail</li>
               <li>Missed ~20 calls per month (lunch, busy, after-hours)</li>
             </ul>
             <p><strong>Missed call cost:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Average case value: $50,000</li>
               <li>Conversion rate: 20% ($10,000 per missed lead)</li>
               <li>20 missed calls × $10,000 = <strong>$200,000 lost per month</strong></li>
               <li><strong>$2.4M lost per year</strong></li>
             </ul>
             <p><strong>With AI answering service:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Cost: $400/month ($4,800/year)</li>
               <li>Captures 90% of missed calls = 18 calls recovered</li>
               <li>18 × $10,000 = <strong>$180,000 recovered per month</strong></li>
@@ -302,14 +302,14 @@ export default function LawFirmPhoneAnswering() {
 
             <h3 className="blog-h3">Example: Family Law Practice</h3>
             <p><strong>Current situation:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Emotional, time-sensitive calls</li>
               <li>Clients calling at all hours (divorce emergencies, custody concerns)</li>
               <li>1 receptionist can't handle volume during case peaks</li>
               <li>Lost leads during busy periods</li>
             </ul>
             <p><strong>With AI answering service:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Captures all after-hours calls (divorce emergencies, custody concerns)</li>
               <li>Qualifies leads (contested vs. uncontested, jurisdiction, timeline)</li>
               <li>Books consultations immediately (no callback delay)</li>

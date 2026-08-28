@@ -49,7 +49,7 @@ export default function MissedCallsCost() {
             <p>
               To calculate your real missed-call cost, you need to know:
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>How many calls you're actually missing per week</li>
               <li>What an average customer is worth to you</li>
               <li>Your conversion rate</li>
@@ -66,7 +66,7 @@ export default function MissedCallsCost() {
             <p>
               A personal injury law firm in Miami receives 40 calls per week during business hours.
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li><strong>Calls received:</strong> 40/week</li>
               <li><strong>Calls missed:</strong> 8/week (after-hours, busy lines)</li>
               <li><strong>Average case value:</strong> $15,000</li>
@@ -75,7 +75,7 @@ export default function MissedCallsCost() {
             <p>
               The math:
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>8 missed calls × (1 in 5 conversion) = 1.6 lost cases/week</li>
               <li>1.6 cases × $15,000 = <strong>$24,000 lost per week</strong></li>
               <li><strong>$96,000 lost per month</strong></li>
@@ -89,7 +89,7 @@ export default function MissedCallsCost() {
             <p>
               An HVAC repair company gets 25 calls per day. 20% of those are missed (lunch, job sites, etc.)
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li><strong>Calls received:</strong> 25/day (125/week)</li>
               <li><strong>Calls missed:</strong> 5/day (25/week)</li>
               <li><strong>Average service call value:</strong> $250</li>
@@ -98,7 +98,7 @@ export default function MissedCallsCost() {
             <p>
               The math:
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>25 missed calls × 60% booking rate = 15 jobs missed/week</li>
               <li>15 jobs × $250 = <strong>$3,750 lost per week</strong></li>
               <li><strong>$15,000 lost per month</strong></li>
@@ -140,14 +140,14 @@ export default function MissedCallsCost() {
             <h3 className="blog-h3">Step-by-Step</h3>
 
             <p><strong>Step 1: How many calls do you miss per week?</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Track this for 2 weeks (count calls that go to voicemail, don't connect, or ring out)</li>
               <li>Divide by 2 to get weekly average</li>
               <li>Example: 15 missed calls/week</li>
             </ul>
 
             <p className="mt-4"><strong>Step 2: What's your conversion rate?</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Of qualified inbound calls, what % actually become customers?</li>
               <li>Service businesses: 40-70%</li>
               <li>B2B: 10-30%</li>
@@ -156,7 +156,7 @@ export default function MissedCallsCost() {
             </ul>
 
             <p className="mt-4"><strong>Step 3: What's your average customer value?</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>First transaction value? Lifetime value?</li>
               <li>For monthly services, use 6-12 months of revenue</li>
               <li>Example: $2,000</li>
@@ -174,7 +174,7 @@ export default function MissedCallsCost() {
 
             <h3 className="blog-h3">ROI Calculation</h3>
             <p>Using the example above:</p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Cost: $300/month ($3,600/year)</li>
               <li>Missed calls currently: 15/week</li>
               <li>Calls recovered: 15 × 85% = 12.75 calls/week</li>

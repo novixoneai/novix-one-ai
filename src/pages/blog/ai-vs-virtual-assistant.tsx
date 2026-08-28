@@ -62,7 +62,7 @@ export default function AIvsVirtualAssistant() {
             <p>
               A virtual assistant (VA) is a real person, usually in a low-cost country (Philippines, India, Eastern Europe), who handles administrative tasks remotely. For phone duty, they:
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Answer your business line during set hours</li>
               <li>Take messages</li>
               <li>Book appointments</li>
@@ -74,14 +74,14 @@ export default function AIvsVirtualAssistant() {
 
             <h3 className="blog-h3">The Virtual Assistant Cost Breakdown</h3>
             <p><strong>Monthly costs:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Virtual assistant salary: $300-800/month</li>
               <li>Tools (Slack, call routing): $100-200/month</li>
               <li>Training & management time: 5-10 hours/week</li>
               <li className="font-bold">Total: $400-1,000+/month minimum</li>
             </ul>
             <p>Plus hidden costs:</p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>High turnover (assistants quit or disappear)</li>
               <li>Re-training new hires repeatedly</li>
               <li>Timezone mismatches (no after-hours coverage)</li>
@@ -123,7 +123,7 @@ export default function AIvsVirtualAssistant() {
             <p>
               An AI answering service uses machine learning to:
             </p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Answer calls 24/7/365 (no time zone issues)</li>
               <li>Understand context and ask follow-up questions</li>
               <li>Book appointments directly into your calendar</li>
@@ -134,7 +134,7 @@ export default function AIvsVirtualAssistant() {
 
             <h3 className="blog-h3">The AI Answering Service Cost Breakdown</h3>
             <p><strong>Monthly costs:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>AI service base: $200-500/month</li>
               <li>No training; no management overhead</li>
               <li className="font-bold">Total: $200-500/month, all-in</li>
@@ -234,13 +234,13 @@ export default function AIvsVirtualAssistant() {
             <h3 className="blog-h3">Scenario 1: A Law Firm in Miami</h3>
             <p><strong>The situation:</strong> 30 calls/week, after-hours calls are common, high-value leads ($10,000+ per case), need lead qualification.</p>
             <p><strong>Virtual Assistant approach:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Cost: $600/month + 8 hours/week management</li>
               <li>After-hours calls? Missed entirely</li>
               <li>Result: Loses $50,000-100,000 in leads per year</li>
             </ul>
             <p><strong>AI Answering Service approach:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Cost: $300/month + 0 management hours</li>
               <li>After-hours calls? Answered, qualified, scheduled</li>
               <li>Captured leads worth $100,000-200,000 per year</li>
@@ -251,14 +251,14 @@ export default function AIvsVirtualAssistant() {
             <h3 className="blog-h3">Scenario 2: An HVAC Company</h3>
             <p><strong>The situation:</strong> 50 calls/day, emergency calls on weekends, need appointment booking, seasonal volume spikes.</p>
             <p><strong>Virtual Assistant approach:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Cost: Need 2-3 VAs = $1,200-2,400/month</li>
               <li>Training/managing 3 people = 20+ hours/week</li>
               <li>Inconsistent quality during high volume</li>
               <li>Result: Expensive mess during peak season</li>
             </ul>
             <p><strong>AI Answering Service approach:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Cost: $300/month (handles all 50 calls/day automatically)</li>
               <li>Management: 30 minutes/month setup</li>
               <li>Peak seasons? Same service quality, same price</li>
@@ -270,7 +270,7 @@ export default function AIvsVirtualAssistant() {
           <section className="blog-section">
             <h2 className="blog-h2">The Verdict</h2>
             <p><strong>Virtual Assistants are good for:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Email management</li>
               <li>Scheduling</li>
               <li>Content creation</li>
@@ -278,7 +278,7 @@ export default function AIvsVirtualAssistant() {
               <li>Long-term projects requiring judgment</li>
             </ul>
             <p className="mt-4"><strong>AI Answering Services are better for:</strong></p>
-            <ul className="list-inside space-y-2">
+            <ul className="list-inside space-y-4">
               <li>Incoming phone calls</li>
               <li>24/7 coverage</li>
               <li>High call volume</li>
