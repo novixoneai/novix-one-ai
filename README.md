@@ -15,6 +15,7 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 - **Scheduling**: The English and Spanish contact forms open the public Cal.com event at `https://cal.com/novixone/45min?user=novixone` inside a branded, responsive modal, prefilled with `&name=` and `&email=` from the form so Cal.com's own booking screen doesn't ask for them again (verified via `agent-browser`: the modal's iframe `src` carries the encoded values and Cal.com's "Your name"/"Email address" fields render pre-populated).
 - **Bilingual support**: The site includes both English (`/`) and US Spanish (`/es`) versions with language switcher in the header (EN/ES). The Spanish version uses optimized marketing copy tailored for Spanish-speaking audiences.
 - **Industry-specific landing pages**: The site includes specialized landing page prototypes for targeted verticals (e.g., `/law-offices` for Miami law firms). Rather than a custom visual system, this page is built entirely from the homepage's shared global classes (`novix-site`, `hero`, `problem`, `services`/`service-tab`/`service-feature`, `why-section`, `stats-row`, `proof-card`, `booking-modal`, `site-footer`) defined in `src/styles.css`, so any future page for a new vertical should follow the same pattern: reuse the shared classes and only add small scoped `<style>` blocks (like `.cost-section`/`.cost-card` on this page) for layout pieces that don't already exist. Content covers the missed-call problem (1 in 3 unanswered, $90K/year lost), the AI receptionist solution (reusing the homepage's interactive service-tab/service-feature component), and the Appointment & Messages Desk (embedding the actual product screenshot at `public/images/appointment-desk.png`, not a stock photo). CTAs open the same Cal.com booking modal as the homepage.
+- **Offer landing page** (`/database-reactivation`): A single-page offer for reactivating dormant CRM leads via AI outreach. Reuses the same shared classes as `law-offices.tsx` (`novix-site`, `section-heading`, `problem-list`-style narrative, `nxcalc__*` calculator, `process-grid`/`process-card`, `steps-grid`/`step`, `faq-section`, `booking-modal`, `site-footer`) plus page-scoped `<style>` blocks for elements unique to this offer: a 4-column stat strip, an industries "who this is for" band, a champagne-highlighted pull-quote, a cost-comparison bar chart inside the calculator result card, and a bordered gradient "final CTA" card. Note for future single-column landing pages: the site's `.hero h1`/`h1 em` typography (Libre Baskerville, large clamp size, blue italic emphasis) is scoped to the `.hero` class, which also imposes a two-column grid — a hero that skips `.hero` (e.g. because there's no product video for that offer) needs its own scoped `h1`/`h1 em` rules copied over, or the headline silently falls back to unstyled browser defaults.
 
 ## SEO Implementation
 
@@ -43,6 +44,7 @@ Novix One is a Miami-based AI solutions agency. This Zo Site is a polished, moti
 - Homepage (`/`): "AI Automation Agency Miami | Voice Agents & Business Automation" — keyword-first title with geo modifier and primary service
 - Spanish (`/es`): "Agencia de IA Miami | Agentes de Voz y Automatización para Negocios" — Spanish-language variant
 - Law Offices (`/law-offices`): "AI Answering Service for Law Firms Miami | 24/7 Call Handling" — vertical-specific keyword targeting
+- Database Reactivation (`/database-reactivation`): "CRM Database Reactivation | Turn Dead Leads Into Revenue | Novix One" — targets CRM/database reactivation intent
 
 **How to maintain:**
 When adding new pages or updating content, import the SEO utility and add metadata setup in the component's useEffect. See existing pages for patterns.
@@ -97,6 +99,7 @@ This is a Zo Site using Bun + Hono + Vite + React. The runtime is managed by Zo;
 - `src/pages/marketing-demo.tsx` — English version (served at `/`)
 - `src/pages/marketing-demo-es.tsx` — US Spanish version (served at `/es`)
 - `src/pages/law-offices.tsx` — Law firm landing page (served at `/law-offices`) — built from the homepage's shared design-system classes (see Project Notes below), with law firm-specific copy: missed-call problem, cost of lost leads, the AI receptionist solution, and the Appointment & Messages Desk.
+- `src/pages/database-reactivation.tsx` — CRM database reactivation offer landing page (served at `/database-reactivation`) — see Project Notes below.
 
 **Styling & assets:**
 - Global design and responsive styles are in `src/styles.css`
@@ -121,10 +124,10 @@ See `HOSTINGER-DEPLOYMENT.md` for the manual File Manager fallback if FTP is eve
 
 ## Development and verification
 
-- Zo automatically hot reloads the site during development. Updates to page files, styles, and scripts appear immediately in the browser (HMR is enabled in `server.ts`).
+- Updates to page files, styles, and scripts are usually picked up live via Vite's on-demand `transformRequest` in `server.ts` (client-side HMR itself is off — `vite.config.ts` sets `hmr: false`). In practice this can go stale: a file edit (confirmed on disk, `tsc` clean) can keep being served from an old cached transform, especially for `App.tsx`/route changes, showing as React Router's "No routes matched location" console warning even though the route was added. If a page won't reflect a change after a normal wait, check `curl -s http://localhost:<port>/src/App.tsx | head` to compare against the file on disk — if it's stale, the fix is to kill the dev process (`ps aux | grep "bun run --hot server.ts"`, matched by its cwd via `readlink -f /proc/<pid>/cwd`) and let it respawn; if it doesn't respawn on its own within ~30s, restart it directly with the site's own entrypoint: `PORT=<local_port> nohup bash -lc "bun run dev" >> /dev/shm/zosite-<port>.log 2>&1 &` from the site's project root (this mirrors exactly what `/__substrate/honoroute`'s `startService()` does).
 - Type check with `bunx tsc --noEmit`.
 - Build with `bun run build` when validating production output.
-- Use `agent-browser` against the managed preview port for visual and interaction checks. Do not expose localhost URLs to visitors.
+- Use `agent-browser` against the managed preview port for visual and interaction checks. Do not expose localhost URLs to visitors. Use `agent-browser screenshot <path> --full` for a full-page capture (not `--full-page`).
 - Full-page `agent-browser` screenshots may show blank gaps below the fold because `.reveal` sections are opacity:0 until scrolled into view by an IntersectionObserver; scroll incrementally and screenshot each viewport instead.
 
 ## Current content reference

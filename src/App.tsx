@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MarketingDemo from "./pages/marketing-demo";
 import MarketingDemoES from "./pages/marketing-demo-es";
 import LawOffices from "./pages/law-offices";
+import DatabaseReactivation from "./pages/database-reactivation";
 import BlogMissedCalls from "./pages/blog/missed-calls-cost";
 import BlogAIvsVA from "./pages/blog/ai-vs-virtual-assistant";
 import BlogLawFirmPhone from "./pages/blog/law-firm-phone-answering";
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/blog/ai-vs-virtual-assistant" element={<BlogAIvsVA />} />
           <Route path="/blog/law-firm-phone-answering" element={<BlogLawFirmPhone />} />
           <Route path="/law-offices" element={<LawOffices />} />
+          <Route path="/database-reactivation" element={<DatabaseReactivation />} />
           <Route path="/es" element={<MarketingDemoES />} />
           <Route path="/" element={<MarketingDemo />} />
         </Routes>
