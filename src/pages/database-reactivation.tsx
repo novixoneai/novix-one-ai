@@ -95,9 +95,9 @@ export default function DatabaseReactivation() {
       if (el) el.textContent = value;
     }
 
-    function setWidth(id: string, pct: number) {
+    function setScale(id: string, pct: number) {
       const el = document.getElementById(id);
-      if (el) el.style.width = pct + "%";
+      if (el) el.style.transform = `scaleX(${pct / 100})`;
     }
 
     function paint(el: HTMLInputElement) {
@@ -130,8 +130,8 @@ export default function DatabaseReactivation() {
       const rePer = REACT_COST_PER_1000;
       const acPer = cac * 1000;
       const max = Math.max(rePer, acPer);
-      setWidth("drReBar", Math.max(4, (rePer / max) * 100));
-      setWidth("drAcBar", Math.max(4, (acPer / max) * 100));
+      setScale("drReBar", Math.max(4, (rePer / max) * 100));
+      setScale("drAcBar", Math.max(4, (acPer / max) * 100));
       setText("drReBarLab", money(rePer));
       setText("drAcBarLab", money(acPer));
 
@@ -185,7 +185,7 @@ export default function DatabaseReactivation() {
         .compare-bar:last-child { margin-bottom: 0; }
         .compare-bar-label { display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 6px; color: rgba(242,245,249,.85); }
         .compare-track { height: 12px; background: rgba(255,255,255,.1); border-radius: 999px; overflow: hidden; }
-        .compare-fill { height: 100%; border-radius: 999px; transition: width .5s cubic-bezier(.22,.61,.36,1); }
+        .compare-fill { width: 100%; height: 100%; transform-origin: left center; transition: transform .5s cubic-bezier(.22,.61,.36,1); }
         .compare-fill.reactivate { background: var(--aqua); }
         .compare-fill.acquire { background: var(--champagne); }
 
@@ -326,11 +326,11 @@ export default function DatabaseReactivation() {
                     <div className="compare-title">Cost per 1,000 contacts</div>
                     <div className="compare-bar">
                       <div className="compare-bar-label"><span>Reactivate leads you own</span><span id="drReBarLab">$900</span></div>
-                      <div className="compare-track"><div className="compare-fill reactivate" id="drReBar" style={{ width: "8%" }} /></div>
+                      <div className="compare-track"><div className="compare-fill reactivate" id="drReBar" style={{ transform: "scaleX(0.08)" }} /></div>
                     </div>
                     <div className="compare-bar">
                       <div className="compare-bar-label"><span>Buy net-new leads</span><span id="drAcBarLab">$100,000</span></div>
-                      <div className="compare-track"><div className="compare-fill acquire" id="drAcBar" style={{ width: "100%" }} /></div>
+                      <div className="compare-track"><div className="compare-fill acquire" id="drAcBar" style={{ transform: "scaleX(1)" }} /></div>
                     </div>
                   </div>
                   <button className="nxcalc__btn" type="button" onClick={() => setBookingOpen(true)}>Turn this into booked jobs →</button>

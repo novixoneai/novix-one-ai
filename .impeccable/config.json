@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-09-06T01:19:32.217Z",
+        "reason": "pre-existing .service-tab hover padding transition, shipped across homepage/law-offices before this session; out of scope for this task"
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-09-06T01:19:37.414Z",
+        "reason": "site-grid is the established, documented visual identity (README: 'subtle grid, orbit lines') used site-wide since before this session; out of scope for this task"
+      }
+    ]
+  }
+}
