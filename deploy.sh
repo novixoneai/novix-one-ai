@@ -19,8 +19,8 @@ bunx tsc --noEmit
 echo "==> Building"
 bun run build
 
-echo "==> Bundling .htaccess into dist/ (SPA routing fallback, not copied by vite build)"
-cp .htaccess dist/.htaccess
+echo "==> Prerendering per-route meta tags + generating dist/.htaccess (vite build doesn't do this)"
+bun run scripts/prerender-static.ts
 
 echo "==> Uploading dist/ to /public_html/ over FTP"
 # ssl:verify-certificate off: Hostinger's shared-IP cert doesn't match the bare FTP IP.
