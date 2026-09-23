@@ -11,7 +11,7 @@ import {
   Globe2,
   X,
 } from "lucide-react";
-import { setPageMetadata, generateLegalServiceSchema, generateBreadcrumbSchema } from "../lib/seo";
+import { setPageMetadata, generateLegalServiceSchema, generateBreadcrumbSchema, ROUTE_META } from "../lib/seo";
 
 const solutions = [
   {
@@ -79,12 +79,7 @@ export default function LawOffices() {
     };
 
     setPageMetadata({
-      title: "AI Answering Service for Law Firms Miami | 24/7 Call Handling",
-      description: "Never miss another client call. AI answering service for Miami law firms. 24/7 availability, bilingual support, intake qualification, Florida Bar compliant.",
-      ogTitle: "AI Answering Service for Law Firms | Novix One",
-      ogDescription: "24/7 AI receptionist for law firms. Never miss a client call again. English and Spanish support.",
-      ogImage: "https://novixone.co/images/og-image.png",
-      canonicalUrl: "https://novixone.co/law-offices",
+      ...ROUTE_META["/law-offices"],
       schema: schema
     });
   }, []);

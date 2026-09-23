@@ -16,7 +16,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
-import { setPageMetadata, generateLocalBusinessSchema, generateServiceSchema, generateFAQSchema } from "../lib/seo";
+import { setPageMetadata, generateLocalBusinessSchema, generateServiceSchema, generateFAQSchema, ROUTE_META } from "../lib/seo";
 
 const services = [
   {
@@ -98,12 +98,7 @@ export default function MarketingDemo() {
     };
 
     setPageMetadata({
-      title: "AI Automation Agency Miami | Voice Agents & Business Automation",
-      description: "AI automation for Miami small businesses. 24/7 voice agents, appointment booking, and workflow automation. Get a free assessment.",
-      ogTitle: "AI Automation Agency Miami | Novix One",
-      ogDescription: "AI voice agents and automation solutions for small businesses. Never miss another customer call.",
-      ogImage: "https://novixone.co/images/og-image.png",
-      canonicalUrl: "https://novixone.co/",
+      ...ROUTE_META["/"],
       schema: schema
     });
   }, []);

@@ -3,10 +3,82 @@ import type { ViteDevServer } from "vite";
 import { createServer as createViteServer } from "vite";
 import config from "./zosite.json";
 import { Hono } from "hono";
+import { ROUTE_META } from "./src/lib/seo";
 
 // AI agents: read README.md for navigation and contribution guidance.
 type Mode = "development" | "production";
 const app = new Hono();
+
+function escapeHtmlAttr(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+/**
+ * This is a client-rendered SPA: every route serves the same dist/index.html,
+ * with per-page title/OG/canonical tags applied by JS after mount (see
+ * src/lib/seo.ts). Crawlers and services that don't execute JS — social link
+ * previews, some bots — would otherwise see the homepage's tags on every
+ * route. This injects the same ROUTE_META values server-side so the raw HTML
+ * is already correct before any JS runs.
+ */
+function injectRouteMeta(html: string, path: string): string {
+  const meta = ROUTE_META[path];
+  if (!meta) return html;
+
+  let out = html;
+  const title = escapeHtmlAttr(meta.title);
+  const description = escapeHtmlAttr(meta.description);
+  const ogTitle = escapeHtmlAttr(meta.ogTitle ?? meta.title);
+  const ogDescription = escapeHtmlAttr(meta.ogDescription ?? meta.description);
+
+  out = out.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
+  out = out.replace(
+    /<meta name="description" content=".*?"\s*\/>/,
+    `<meta name="description" content="${description}" />`
+  );
+  out = out.replace(
+    /<meta property="og:title" content=".*?"\s*\/>/,
+    `<meta property="og:title" content="${ogTitle}" />`
+  );
+  out = out.replace(
+    /<meta property="og:description" content=".*?"\s*\/>/,
+    `<meta property="og:description" content="${ogDescription}" />`
+  );
+  if (meta.ogImage) {
+    const ogImage = escapeHtmlAttr(meta.ogImage);
+    out = out.replace(
+      /<meta property="og:image" content=".*?"\s*\/>/,
+      `<meta property="og:image" content="${ogImage}" />`
+    );
+  }
+  if (meta.canonicalUrl) {
+    const canonicalUrl = escapeHtmlAttr(meta.canonicalUrl);
+    out = out.replace(
+      /<meta property="og:url" content=".*?"\s*\/>/,
+      `<meta property="og:url" content="${canonicalUrl}" />`
+    );
+    if (/<link rel="canonical"/.test(out)) {
+      out = out.replace(
+        /<link rel="canonical" href=".*?"\s*\/>/,
+        `<link rel="canonical" href="${canonicalUrl}" />`
+      );
+    } else {
+      out = out.replace("</head>", `    <link rel="canonical" href="${canonicalUrl}" />\n  </head>`);
+    }
+  }
+
+  // The en/es/x-default hreflang set only applies to "/" and "/es" — strip it
+  // for every other route so we don't claim a translation that doesn't exist.
+  if (path !== "/" && path !== "/es") {
+    out = out.replace(/\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/>\n?/g, "");
+  }
+
+  return out;
+}
 
 const mode: Mode =
   process.env.NODE_ENV === "production" ? "production" : "development";
@@ -59,7 +131,12 @@ function configureProduction(app: Hono) {
       }
     }
 
-    return serveStatic({ path: "./dist/index.html" })(c, next);
+    const indexHtml = await Bun.file("./dist/index.html").text();
+    const html = injectRouteMeta(indexHtml, path);
+    // Unrecognized paths render the SPA's NotFound route client-side; return a
+    // real 404 status so crawlers don't index them as live pages (soft 404s).
+    const isKnownRoute = path in ROUTE_META || path === "/_design";
+    return c.html(html, isKnownRoute ? 200 : 404);
   });
 }
 

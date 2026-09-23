@@ -16,7 +16,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
-import { setPageMetadata, generateLocalBusinessSchema, generateServiceSchema, generateFAQSchema } from "../lib/seo";
+import { setPageMetadata, generateLocalBusinessSchema, generateServiceSchema, generateFAQSchema, ROUTE_META } from "../lib/seo";
 
 const services = [
   {
@@ -98,12 +98,7 @@ export default function MarketingDemoES() {
     };
 
     setPageMetadata({
-      title: "Agencia de IA Miami | Agentes de Voz y Automatización para Negocios",
-      description: "Automatización de IA para negocios pequeños en Miami. Agentes de voz 24/7, reservas automáticas y automatización de flujos. Evaluación gratuita.",
-      ogTitle: "Agencia de Automatización AI Miami | Novix One",
-      ogDescription: "Agentes de voz y automatización para negocios pequeños. Nunca pierdas otra llamada de cliente.",
-      ogImage: "https://novixone.co/images/og-image.png",
-      canonicalUrl: "https://novixone.co/es/",
+      ...ROUTE_META["/es"],
       schema: schema
     });
   }, []);

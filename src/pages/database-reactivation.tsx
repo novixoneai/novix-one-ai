@@ -10,7 +10,7 @@ import {
   Target,
   X,
 } from "lucide-react";
-import { setPageMetadata, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "../lib/seo";
+import { setPageMetadata, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, ROUTE_META } from "../lib/seo";
 
 const faqs = [
   [
@@ -57,12 +57,7 @@ export default function DatabaseReactivation() {
     };
 
     setPageMetadata({
-      title: "CRM Database Reactivation | Turn Dead Leads Into Revenue | Novix One",
-      description: "Your CRM is full of leads you already paid for. Novix One's AI reactivates them — personalized outreach at scale, live in 14 days, at a fraction of new-lead cost.",
-      ogTitle: "Database Reactivation | Novix One",
-      ogDescription: "AI reactivation for dormant CRM leads. See what your database is worth with our free calculator.",
-      ogImage: "https://novixone.co/images/og-image.png",
-      canonicalUrl: "https://novixone.co/database-reactivation",
+      ...ROUTE_META["/database-reactivation"],
       schema,
     });
   }, []);

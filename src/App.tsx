@@ -7,6 +7,7 @@ import BlogMissedCalls from "./pages/blog/missed-calls-cost";
 import BlogAIvsVA from "./pages/blog/ai-vs-virtual-assistant";
 import BlogLawFirmPhone from "./pages/blog/law-firm-phone-answering";
 import DesignKitDemo from "./pages/_design";
+import NotFound from "./pages/not-found";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/database-reactivation" element={<DatabaseReactivation />} />
           <Route path="/es" element={<MarketingDemoES />} />
           <Route path="/" element={<MarketingDemo />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

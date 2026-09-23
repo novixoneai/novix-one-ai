@@ -1,4 +1,30 @@
+import { useEffect } from "react";
+import { setPageMetadata, generateArticleSchema, generateBreadcrumbSchema, ROUTE_META } from "../../lib/seo";
+
 export default function LawFirmPhoneAnswering() {
+  useEffect(() => {
+    const meta = ROUTE_META["/blog/law-firm-phone-answering"];
+    setPageMetadata({
+      ...meta,
+      schema: {
+        "@context": "https://schema.org",
+        "@graph": [
+          generateArticleSchema({
+            headline: "Law Firm Phone Answering: AI vs. Human Receptionists",
+            description: meta.description,
+            url: meta.canonicalUrl!,
+            datePublished: "2026-08-28",
+          }),
+          generateBreadcrumbSchema([
+            { name: "Home", url: "https://novixone.co/" },
+            { name: "Blog", url: "https://novixone.co/blog/law-firm-phone-answering" },
+            { name: "Law Firm Phone Answering", url: meta.canonicalUrl! },
+          ]),
+        ],
+      },
+    });
+  }, []);
+
   return (
     <article className="min-h-screen" style={{ background: '#0d2c4e', color: '#f2f5f9', fontFamily: '"DM Sans", sans-serif' }}>
       <style>{`

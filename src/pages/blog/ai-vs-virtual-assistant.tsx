@@ -1,4 +1,30 @@
+import { useEffect } from "react";
+import { setPageMetadata, generateArticleSchema, generateBreadcrumbSchema, ROUTE_META } from "../../lib/seo";
+
 export default function AIvsVirtualAssistant() {
+  useEffect(() => {
+    const meta = ROUTE_META["/blog/ai-vs-virtual-assistant"];
+    setPageMetadata({
+      ...meta,
+      schema: {
+        "@context": "https://schema.org",
+        "@graph": [
+          generateArticleSchema({
+            headline: "Why AI Answering Services Beat Virtual Assistants",
+            description: meta.description,
+            url: meta.canonicalUrl!,
+            datePublished: "2026-08-28",
+          }),
+          generateBreadcrumbSchema([
+            { name: "Home", url: "https://novixone.co/" },
+            { name: "Blog", url: "https://novixone.co/blog/ai-vs-virtual-assistant" },
+            { name: "AI vs. Virtual Assistant", url: meta.canonicalUrl! },
+          ]),
+        ],
+      },
+    });
+  }, []);
+
   return (
     <article className="min-h-screen" style={{ background: '#0d2c4e', color: '#f2f5f9', fontFamily: '"DM Sans", sans-serif' }}>
       <style>{`

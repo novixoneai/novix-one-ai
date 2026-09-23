@@ -1,4 +1,30 @@
+import { useEffect } from "react";
+import { setPageMetadata, generateArticleSchema, generateBreadcrumbSchema, ROUTE_META } from "../../lib/seo";
+
 export default function MissedCallsCost() {
+  useEffect(() => {
+    const meta = ROUTE_META["/blog/missed-calls-cost"];
+    setPageMetadata({
+      ...meta,
+      schema: {
+        "@context": "https://schema.org",
+        "@graph": [
+          generateArticleSchema({
+            headline: "How to Calculate the Cost of Missed Calls for Your Business",
+            description: meta.description,
+            url: meta.canonicalUrl!,
+            datePublished: "2026-08-28",
+          }),
+          generateBreadcrumbSchema([
+            { name: "Home", url: "https://novixone.co/" },
+            { name: "Blog", url: "https://novixone.co/blog/missed-calls-cost" },
+            { name: "The Cost of Missed Calls", url: meta.canonicalUrl! },
+          ]),
+        ],
+      },
+    });
+  }, []);
+
   return (
     <article className="min-h-screen" style={{ background: '#0d2c4e', color: '#f2f5f9', fontFamily: '"DM Sans", sans-serif' }}>
       <style>{`
